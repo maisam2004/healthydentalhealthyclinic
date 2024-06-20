@@ -33,7 +33,7 @@ DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
 
 
-ALLOWED_HOSTS = ['healtydentalclinic-8f35f633fd68.herokuapp.com','localhost','127.0.0.1','https://dental-clinic-render.onrender.com']
+ALLOWED_HOSTS = ['healtydentalclinic-8f35f633fd68.herokuapp.com','localhost','127.0.0.1','dental-clinic-render.onrender.com']
 
 
 #digital ocean 
