@@ -1,0 +1,83 @@
+[
+{
+    "model": "appointments.service",
+    "pk": 1,
+    "fields": {
+        "name": "Teeth Whitening",
+        "description": "Brighten your smile by removing stains and discoloration",
+        "base_price": "80.00"
+    }
+},
+{
+    "model": "appointments.service",
+    "pk": 2,
+    "fields": {
+        "name": "Porcelain Veneers",
+        "description": "Custom-made thin shells that cover the front surface of your teeth",
+        "base_price": "360.00"
+    }
+},
+{
+    "model": "appointments.service",
+    "pk": 3,
+    "fields": {
+        "name": "Invisalign",
+        "description": "Straighten your teeth discreetly",
+        "base_price": "320.00"
+    }
+},
+{
+    "model": "appointments.service",
+    "pk": 4,
+    "fields": {
+        "name": "Smile Makeovers ",
+        "description": "achieve your dream smile",
+        "base_price": "800.00"
+    }
+},
+{
+    "model": "appointments.service",
+    "pk": 5,
+    "fields": {
+        "name": "Filling",
+        "description": "We use tooth-colored fillings to repair cavities and restore the natural appearance of your teeth.",
+        "base_price": "145.00"
+    }
+},
+{
+    "model": "appointments.service",
+    "pk": 6,
+    "fields": {
+        "name": "Implant",
+        "description": "Dental implants are a permanent solution for missing teeth.",
+        "base_price": "320.00"
+    }
+},
+{
+    "model": "appointments.service",
+    "pk": 7,
+    "fields": {
+        "name": "EMERGENCY APPOINTMENT",
+        "description": "EMERGENCY APPOINTMENT",
+        "base_price": "100.00"
+    }
+},
+{
+    "model": "appointments.service",
+    "pk": 8,
+    "fields": {
+        "name": "Hygienist",
+        "description": "General Dentistry ",
+        "base_price": "320.00"
+    }
+},
+{
+    "model": "appointments.service",
+    "pk": 9,
+    "fields": {
+        "name": "Mouthguard",
+        "description": "Mouthguard",
+        "base_price": "80.00"
+    }
+}
+]

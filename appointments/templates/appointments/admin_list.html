@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block cortitle  %}admin lists{% endblock %}
+{% block page%}admin_list{% endblock %}
+{% block content %}
+
+<h1>All Appointments</h1>
+<a href="{% url 'add_appointment' %}" class="btn btn-success my-3 rounded-pill">Add Appointment</a>
+<div class="table-responsive p-1 ">
+<table class="table table-striped fs-6">
+    <thead>
+        <tr>
+            <th class="d-none d-md-table-cell">Reference</th>
+            <th>Full Name</th>
+            <th class="d-none d-md-table-cell">Email</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Service</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for appointment in appointments %}
+        <tr class="border border-info-subtle">
+            <td class="d-none d-md-table-cell mt-auto">{{ appointment.reference_number }}</td>
+            <td>{{ appointment.full_name }}</td>
+            <td class="d-none d-md-table-cell">{{ appointment.email }}</td>
+            <td>{{ appointment.date }}</td>
+            <td>{{ appointment.time|date:"H:i" }}</td>
+            <td>{{ appointment.service }}</td>
+            <td >{{ appointment.status }}</td>
+            <td >
+                {% if appointment.status != 'Cancelled' %}
+                <a href="{% url 'edit_appointment' appointment.id %}" class="btn btn-primary btn-sm nav-justified w-100 my-1">Edit</a>
+                <a href="{% url 'admin_cancel_appointment' appointment.id %}" class="btn btn-danger w-100">Cancel</a>
+                {% else %}
+                <a href="{% url 'edit_appointment' appointment.id %}" class="btn btn-outline-primary btn-sm disabled  w-100 my-1 " >Edit</a>
+                <a href="{% url 'admin_cancel_appointment' appointment.id %}" class="btn btn-outline-danger disabled  w-100" >Cancel</a>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock %}

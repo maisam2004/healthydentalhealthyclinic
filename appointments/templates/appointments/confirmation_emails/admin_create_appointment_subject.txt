@@ -1,0 +1,1 @@
+Appointment Booked - {{ appointment.reference_number }}

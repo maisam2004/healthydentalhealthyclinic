@@ -1,0 +1,24 @@
+# admin_create_appointment_body.txt
+Dear {{ appointment.full_name }},
+
+Thank you for booking your appointment!
+
+Here are your appointment details:
+
+Date: {{ appointment.date }}
+Time: {{ appointment.time }}
+Dentist: {{ appointment.dentist }}
+
+{% if appointment.service %}
+Service: {{ appointment.service.name }}
+{% endif %}
+
+{% if appointment.notes %}
+Notes: {{ appointment.notes }}
+{% endif %}
+
+We look forward to seeing you!
+
+Sincerely,
+
+Healthy Dental clinic

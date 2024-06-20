@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block cortitle  %}admin booking{% endblock %}
+{% block page%}admin_booking{% endblock %}
+{% block content %}
+<div class="container mt-5 mb-3">
+    <h3><u>Admin {% if form.instance.pk %}Edit{% else %}Add{% endif %} Appointment </u></h3>
+    
+    <form method="post" novalidate>
+        {% csrf_token %}
+        {{ form.media }}
+        {{ form|crispy }}  
+        <button type="submit" class="btn btn-primary">
+            {% if form.instance.pk %}Update{% else %}Add{% endif %} Appointment
+        </button>
+        <a href="{% url 'admin_list_appointments' %}" class="btn btn-secondary rounded-pill my-2">Cancel</a>
+    </form>
+</div>
+{% endblock %}

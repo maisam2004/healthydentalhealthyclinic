@@ -1,0 +1,71 @@
+
+{% extends "base.html" %}
+{% block cortitle  %}booked{% endblock %}
+{% block page%}booked_app{% endblock %}
+{% block content %}
+
+
+<div class="container mt-5 booked_app_card w-100" > 
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-success text-white">
+                    <h2 class="card-title">Appointment Booked Successfully!</h2>
+                </div>
+                <div class="card-body">
+                    <img src="data:image/png;base64,{{ qr_code_data|safe }}" alt="Appointment QR Code" class="w-50" >
+                    <h5 class="card-subtitle mb-3 text-muted">
+                        <strong>Booking Reference Number:</strong> {{ appointment.reference_number|stringformat:"s"|slice:":6" }}
+                    </h5>
+                    
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <th scope="row">Full Name:</th>
+                                <td>{{ appointment.full_name }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Phone Number:</th>
+                                <td>{{ appointment.phone_number }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Email:</th>
+                                <td>{{ appointment.email }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Dentist:</th>
+                                <td>{{ appointment.dentist }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Date:</th>
+                                <td>{{ appointment.date }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Time:</th>
+                                <td>{{ appointment.time }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Service:</th>
+                                <td>{{ appointment.service }}</td>
+                            </tr>
+                            {% if appointment.notes %}
+                            <tr>
+                                <th scope="row">Notes:</th>
+                                <td>{{ appointment.notes }}</td>
+                            </tr>
+                            {% endif %}
+                        </tbody>
+                    </table>
+                    
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-primary mt-3" onclick="window.print()">Print Appointment Details</a>
+                   
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

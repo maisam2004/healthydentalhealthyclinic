@@ -1,0 +1,15 @@
+# confirmation_email_cancellation_body.txt
+Dear {{ appointment.full_name }},
+
+We regret to inform you that your appointment scheduled for {{ appointment.date }} at {{ appointment.time }} with {{ appointment.dentist }} has been cancelled.
+
+If you would like to book another appointment, please visit our website or call us on +12709960875
+
+Thank you,
+
+We look forward to seeing you!
+
+
+
+Healthy Dental clinic
+Your Dental Practice Team

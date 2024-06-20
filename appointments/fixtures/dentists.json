@@ -1,0 +1,75 @@
+[
+{
+    "model": "appointments.dentist",
+    "pk": 6,
+    "fields": {
+        "user": 5,
+        "services": [
+            12,
+            13,
+            14,
+            16,
+            18
+        ]
+    }
+},
+{
+    "model": "appointments.dentist",
+    "pk": 7,
+    "fields": {
+        "user": 8,
+        "services": [
+            1,
+            3,
+            4,
+            5,
+            6,
+            17
+        ]
+    }
+},
+{
+    "model": "appointments.dentist",
+    "pk": 8,
+    "fields": {
+        "user": 7,
+        "services": [
+            7,
+            8,
+            9,
+            10,
+            11,
+            18
+        ]
+    }
+},
+{
+    "model": "appointments.dentist",
+    "pk": 9,
+    "fields": {
+        "user": 4,
+        "services": [
+            12,
+            13,
+            15,
+            16
+        ]
+    }
+},
+{
+    "model": "appointments.dentist",
+    "pk": 10,
+    "fields": {
+        "user": 6,
+        "services": [
+            1,
+            3,
+            4,
+            5,
+            6,
+            12,
+            17
+        ]
+    }
+}
+]

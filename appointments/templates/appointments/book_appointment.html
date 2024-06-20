@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block cortitle  %}Book appointment{% endblock %}
+{% block page%}book_appointment{% endblock %}
+{% block content %}
+
+<div class="container align-items-center  p-2  bg-light rounded-4 mt-4 ">
+
+    <hr>
+    <p class="h2 logo-font mb-4 text-center">Book an Appointment</p>
+    <hr>
+
+
+    {{ form.media }}
+    <form method="POST" class="flex-column">
+        {% csrf_token %}
+        
+        {{ form|crispy}}
+        
+
+        {% if not user.is_authenticated %}
+            {{ form.email }} 
+        {% else %}
+{% comment %}             <input type="email" name="email" id="id_email" value="{{ user.email }}" hidden> {% endcomment %} 
+    <input type="hidden" name="email" value="{{ user.email }}">
+
+        {% endif %}
+        
+        <button type="submit" class="btn btn-primary">Book Appointment</button>
+    </form>
+</div> 
+
+
+{% endblock %}
+
+{% comment %} <div class="container align-items-center  p-2  bg-light rounded-4">
+
+    <hr>
+    <p class="h2 logo-font mb-4">Book an Appointment</p>
+    <hr>
+
+
+    {{ form.media }}
+    <form method="POST" class="flex-column">
+        {% csrf_token %}
+
+        {% if form.full_name.value %}  
+            <div class="form-group">
+                <label for="id_full_name">Full Name:</label>
+                <input type="text" name="full_name" id="id_full_name" class="form-control" value="{{ form.full_name.value }}" required>
+            </div>
+        {% else %}
+            {{ form.full_name|as_crispy_field }} 
+        {% endif %}
+        
+
+        {{ form.phone_number|as_crispy_field }}
+
+        {% if not user.is_authenticated %}
+            {{ form.email|as_crispy_field }} 
+        {% else %}
+            <input type="email" name="email" id="id_email" value="{{ user.email }}" hidden>
+        {% endif %}
+        
+        {{ form.date|as_crispy_field }}
+        {{ form.time|as_crispy_field }}
+        {{ form.service|as_crispy_field }}
+        {{ form.notes|as_crispy_field }}
+
+        <button type="submit" class="btn btn-primary">Book Appointment</button>
+    </form>
+</div> {% endcomment %}
+
