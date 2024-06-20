@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+{% load custom_filters %} 
+{% block cortitle %}products{% endblock %}
+{% block page%}products{% endblock %}
+{% block content %}
+<div class="overlay "></div>
+<div class="container-fluid">
+    <div class="d-flex ">
+        <div class="col-6 d-flex">
+            <h6>Sort By:</h6>
+            <div class="btn-group btndrop ">
+                <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    {% if sort_by == 'default' %}
+                        Default
+                    {% elif sort_by == 'name_asc' %}
+                        Name (A-Z)
+                    {% elif sort_by == 'name_desc' %}
+                        Name (Z-A)
+                    {% elif sort_by == 'price_asc' %}
+                        Price (Low to High)
+                    {% elif sort_by == 'price_desc' %}
+                        Price (High to Low)
+                    {% elif sort_by == 'category' %}
+                        Rating (High to Low)
+                    {% elif sort_by == 'category' %}
+                        Category(High to Low)
+                    {% else %}
+                        Sort By
+                    {% endif %}
+                </button>
+                <ul class="dropdown-menu  ">
+                    <li><a class="dropdown-item {% if sort_by == 'default' %}active{% endif %}" href="?sort_by=default">Default</a></li>
+                    <li><a class="dropdown-item {% if sort_by == 'name_asc' %}active{% endif %}" href="?sort_by=name_asc">Name (A-Z)</a></li>
+                    <li><a class="dropdown-item {% if sort_by == 'name_desc' %}active{% endif %}" href="?sort_by=name_desc">Name (Z-A)</a></li>
+                    <li><a class="dropdown-item {% if sort_by == 'price_asc' %}active{% endif %}" href="?sort_by=price_asc">Price (Low to High)</a></li>
+                    <li><a class="dropdown-item {% if sort_by == 'price_desc' %}active{% endif %}" href="?sort_by=price_desc">Price (High to Low)</a></li>
+                    <li><a class="dropdown-item {% if sort_by == 'rating' %}active{% endif %}" href="?sort_by=rating">Rating (High to Low rate)</a></li>
+                   
+
+
+                </ul>
+            </div>
+        </div>
+        <div class="dropdown_cat col-6 d-flex d-md-none ms-2"> <h6 class="pe-1">Categories</h6> 
+            <div class="btn-group btndrop">
+              <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  filters
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{% url 'products'%}?category=dental_care">Dental Care</a></li>
+                <li><a class="dropdown-item" href="{% url 'products'%}?category=oral_hygiene">Oral Hygiene</a></li>
+                <li><a class="dropdown-item" href="{% url 'products'%}?category=health">Health</a></li>
+                <li><a class="dropdown-item" href="{% url 'products'%}?category=dental_accessories">Dental Accessories</a></li>
+                <li><a class="dropdown-item" href="{% url 'products'%}?category=professional_tools">Professional Tools</a></li>
+                <li><a class="dropdown-item" href="{% url 'products'%}?category=gift_sets">Gift Sets</a></li>
+              </ul>
+            </div>
+          </div>
+          
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        
+    </div>
+    <div class="row">
+        
+    </div>
+    <div class="row">
+        <div class="product-container col-10 offset-1">
+            <div class="row mt-1 mb-2"></div>
+            <div class="row">
+                {% if search_term %}<h4>search term: {{search_term}}</h4>{% endif %}
+                {% for product in products %}
+                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                    <div class="card h-100 border products_cards">
+                        {% if product.image %}
+                        <a href="{% url 'product_detail' product.id %}" class="d-flex justify-content-center bg-light">
+                        <img src="{{ product.image.url }}" class="card-img-top" alt="{{product.name}}.">
+                        {% comment %} <img src="{{ MEDIA_URL }}{{ product.image }}" class="card-img-top ms-5" alt="{{ product.name }}"> {% endcomment %}
+
+                        </a>
+                        {% else %}
+                        <a href="{% url 'product_detail' product.id %}">
+                            <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top" alt="{{product.name}}">
+                            </a>
+                            {% endif %}  
+                        <div class="card-body">
+                            <h6 class="card-title fw-bold">{{product.name}} </h6>
+                            
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item fw-bold">price: ${{product.price}}</li>
+                            {% if product.rating %}
+                            <li class="list-group-item   ">
+                                {% comment %} {{ product.rating }}  {% endcomment %}
+                            
+                                rating:<span class="stars text-warning ">{{ product.rating|stars|safe }}</span>
+                            </li>
+                            {% else %}
+                            <li class="list-group-item">NO Rating </li>
+                            {% endif %}
+                            {% if request.user.is_superuser %}
+                                <li class="ms-3">
+                                    <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                        <div class="card-body d-flex justify-content-center align-items-end">
+                            <a href="{% url 'product_detail' product.id %}" class="card-link btn btn-outline-success rounded-pill">Find out more</a>
+                            
+                        </div>
+
+
+                    </div>
+                    
+                </div>
+                <div class="col-12 d-sm-none">
+                    <hr>
+                </div>
+                {% if forloop.counter|divisibleby:2 %}
+                    <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-4">
+                        <hr>
+                    </div>
+                    {% endif %}
+                {% if forloop.counter|divisibleby:3 %}
+                    <div class="col-12 d-none  d-lg-block d-xl-none mb-4">
+                        <hr>
+                    </div>
+                    {% endif %}
+                {% if forloop.counter|divisibleby:4 %}
+                    <div class="col-12 d-none d-xl-block mb-4">
+                        <hr>
+                    </div>
+                {% endif %}
+
+                {% endfor %}
+
+            </div>
+        </div>
+        
+    </div>
+
+</div>
+
+
+
+{% endblock %}
+{% block 'extrajs' %}
+{{ block.super }}
+
+
+    {% endblock %}

@@ -1,0 +1,49 @@
+Dental Accessories:
+
+Dental Care:
+
+Denture care products (cleaners, adhesives, storage).
+Orthodontic supplies (wax, retainer cases, special brushes).
+Specialty toothbrushes (interdental brushes, tongue scrapers, sulca brushes).
+
+Oral Hygiene:
+
+Kids' products (fun toothbrushes, flavored toothpaste/rinses).
+Teeth whitening (strips, gels, trays).
+Products for sensitive teeth and gums.
+
+
+Health:
+
+Focus on Oral Health Connection: Supplements that support oral health (probiotics for gum health, specific vitamins/minerals).
+Natural options: Herbal teas, essential oils, other natural remedies that promote oral health.
+
+Dental Accessories:
+
+Travel toothbrush kits
+Water flossers.
+Mouthguard cases.
+Electric toothbrush accessories (stands, travel chargers).
+
+Professional Tools :
+
+Simple dental mirrors and probes.
+At-home teeth scaling kits (this may depend on your target audience).
+
+Gift Sets:
+
+Curated oral care sets (themed around whitening, travel, kids, etc.)
+Gift baskets combining oral hygiene products with healthy snacks or aromatherapy items.
+
+
+..............delivery left calculate
+
+{% if free_delivery_delta > 0 %} 
+    <p class="mb-1 text-danger">
+        You could get free delivery by spending just <strong>${{ free_delivery_delta|floatformat:2 }}</strong> more!
+    </p>
+{% else %}  
+    <p class="mb-1 text-success">
+        You qualify for free delivery!
+    </p>
+{% endif %} 

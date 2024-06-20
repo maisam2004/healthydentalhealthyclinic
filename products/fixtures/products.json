@@ -1,0 +1,631 @@
+[
+    {
+        "pk": 1,
+        "model": "products.product",
+        "fields": {
+            "sku": "DC10001",
+            "name": "Interdental Brushes (Pack of 20)",
+            "description": "Effectively clean between teeth and around braces with these thin, flexible interdental brushes.",
+            "price": 5.99,
+            "category": 1, 
+            "rating": 4.5,
+            "image_url": "http://your-website.com/media/interdental_brushes.jpg",
+            "image": "interdental_brushes.jpg",
+            "stock": 150,
+            "manufacturer": "DentalCare Co.",
+            "expiration_date": "2025-12-31"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "products.product",
+        "fields": {
+            "sku": "DC10002",
+            "name": "Sulca Brush",
+            "description": "Specially designed brush for cleaning along the gum line and hard-to-reach areas.",
+            "price": 4.49,
+            "category": 1, 
+            "rating": 4.2,
+            "image_url": "http://your-website.com/media/sulca_brush.jpg",
+            "image": "sulca_brush.jpg",
+            "stock": 200,
+            "manufacturer": "GumCare Inc.",
+            "expiration_date": "2024-06-30"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "products.product",
+        "fields": {
+            "sku": "DC10003",
+            "name": "Tongue Scraper",
+            "description": "Removes bacteria and freshen breath with this stainless steel tongue scraper.",
+            "price": 3.99,
+            "category": 1, 
+            "rating": 4.8,
+            "image_url": "http://your-website.com/media/tongue_scraper.jpg",
+            "image": "tongue_scraper.jpg",
+            "stock": 300,
+            "manufacturer": "OralHealth Solutions",
+            "expiration_date": "2026-01-01"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "products.product",
+        "fields": {
+            "sku": "DC10004",
+            "name": "Orthodontic Wax",
+            "description": "Provides relief from discomfort caused by braces or orthodontic appliances.",
+            "price": 2.99,
+            "category": 1,  
+            "rating": 4.0,
+            "image_url": "http://your-website.com/media/orthodontic_wax.jpg",
+            "image": "orthodontic_wax.jpg",
+            "stock": 100,
+            "manufacturer": "OrthoCare Ltd.",
+            "expiration_date": "2025-09-15"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "products.product",
+        "fields": {
+            "sku": "DC10005",
+            "name": "Denture Cleaning Tablets",
+            "description": "Dissolving tablets for cleaning and soaking dentures overnight.",
+            "price": 8.99,
+            "category": 1, 
+            "rating": 4.3,
+            "image_url": "http://your-website.com/media/denture_tablets.jpg",
+            "image": "denture_tablets.jpg",
+            "stock": 250,
+            "manufacturer": "DentCare Products",
+            "expiration_date": "2026-03-31"
+        }
+    },
+    { 
+        "pk": 6,
+        "model": "products.product",
+        "fields": {
+            "sku": "DC10006",
+            "name": "Floss Threaders (Pack of 30)",
+            "description": "Pre-threaded floss threaders make flossing around braces and dental bridges easier.",
+            "price": 4.99,
+            "category": 1, 
+            "rating": 4.7,
+            "image_url": "http://your-website.com/media/floss_threaders.jpg",
+            "image": "floss_threaders.jpg",
+            "stock": 180,
+            "manufacturer": "ThreadCare Co.",
+            "expiration_date": "2024-12-31"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "products.product",
+        "fields": {
+            "sku": "DC10007",
+            "name": "Travel Toothbrush & Case Set",
+            "description": "Compact toothbrush and ventilated case perfect for on-the-go oral care.",
+            "price": 6.99,
+            "category": 1,
+            "rating": 4.4,
+            "image_url": "http://your-website.com/media/travel_toothbrush_set.jpg",
+            "image": "travel_toothbrush_case_set.jpg",
+            "stock": 50,
+            "manufacturer": "DentalGo Inc.",
+            "expiration_date": null
+        }
+    },
+    {
+        "pk": 8,
+        "model": "products.product",
+        "fields": {
+            "sku": "DC10008",
+            "name": "Kids' Character Toothbrush (Assorted)",
+            "description": "Fun and colorful toothbrushes featuring popular characters to encourage brushing.",
+            "price": 3.99,
+            "category": 1,
+            "rating": 4.2,
+            "image_url": "http://your-website.com/media/kids_toothbrushes.jpg",
+            "image": "kids_toothbrushes_Character.jpg",
+            "stock": 100,
+            "manufacturer": "BrushBuddy Co.",
+            "expiration_date": null
+        }
+    },
+    {
+        "pk": 9,
+        "model": "products.product",
+        "fields": {
+            "sku": "OH10001",
+            "name": "Fluoride Toothpaste",
+            "description": "Strengthens teeth and fights cavities with fluoride. Classic mint flavor.",
+            "price": 3.99,
+            "category": 2,
+            "rating": 4.5,
+            "image_url": "http://your-website.com/media/fluoride_toothpaste.jpg",
+            "image": "fluoride_toothpaste.jpg",
+            "stock": 200,
+            "manufacturer": "FreshSmile Co.",
+            "expiration_date": "2025-06-30"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "products.product",
+        "fields": {
+            "sku": "OH10002",
+            "name": "Alcohol-Free Mouthwash",
+            "description": "Kills bad breath germs and freshens breath without the harshness of alcohol. Spearmint flavor.",
+            "price": 5.99,
+            "category": 2,
+            "rating": 4.6,
+            "image_url": "http://your-website.com/media/alcohol_free_mouthwash.jpg",
+            "image": "alcohol_free_mouthwash.jpg",
+            "stock": 75,
+            "manufacturer": "FreshBreath Inc.",
+            "expiration_date": "2026-01-31"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "products.product",
+        "fields": {
+            "sku": "OH10003",
+            "name": "Dental Floss (Mint-flavored)",
+            "description": "Shred-resistant floss with a refreshing mint flavor for effective cleaning between teeth.",
+            "price": 2.49,
+            "category": 2,
+            "rating": 4.3,
+            "image_url": "http://your-website.com/media/mint_floss.jpg",
+            "image": "mint_floss.jpg",
+            "stock": 300,
+            "manufacturer": "FlossRight Ltd.",
+            "expiration_date": null
+        }
+    },
+    {
+        "pk": 12,
+        "model": "products.product",
+        "fields": {
+            "sku": "OH10004",
+            "name": "Whitening Toothpaste",
+            "description": "Formulated with whitening agents to remove surface stains and brighten smiles.",
+            "price": 6.49,
+            "category": 2,
+            "rating": 4.2,
+            "image_url": "http://your-website.com/media/whitening_toothpaste.jpg",
+            "image": "whitening_toothpaste.jpg",
+            "stock": 120,
+            "manufacturer": "BrightSmile Co.",
+            "expiration_date": "2024-09-30"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "products.product",
+        "fields": {
+            "sku": "OH10005",
+            "name": "Kids' Bubblegum Toothpaste",
+            "description": "Fluoride toothpaste with a fun bubblegum flavor to make brushing enjoyable for children.",
+            "price": 3.49,
+            "category": 2,
+            "rating": 4.8,
+            "image_url": "http://your-website.com/media/kids_bubblegum_toothpaste.jpg",
+            "image": "kids_bubblegum_toothpaste.jpg",
+            "stock": 150,
+            "manufacturer": "SmileMakers Inc.",
+            "expiration_date": "2025-03-31"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "products.product",
+        "fields": {
+            "sku": "OH10006",
+            "name": "Teeth Whitening Strips",
+            "description": "Convenient at-home whitening strips for a visibly brighter smile.",
+            "price": 19.99,
+            "category": 2,
+            "rating": 4.0,
+            "image_url": "http://your-website.com/media/whitening_strips.jpg",
+            "image": "whitening_strips.jpg",
+            "stock": 80,
+            "manufacturer": "BrightSmile Co.",
+            "expiration_date": "2024-11-30"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "products.product",
+        "fields": {
+            "sku": "OH10007",
+            "name": "Floss Picks (Pack of 50)",
+            "description": "Easy-to-use floss picks for convenient flossing on the go.",
+            "price": 3.99,
+            "category": 2,
+            "rating": 4.4,
+            "image_url": "http://your-website.com/media/floss_picks.jpg",
+            "image": "floss_picks.jpg",
+            "stock": 200,
+            "manufacturer": "FlossRight Ltd.",
+            "expiration_date": null
+        }
+    },
+    {
+        "pk": 16,
+        "model": "products.product",
+        "fields": {
+            "sku": "HS10001",
+            "name": "Probiotics for Oral Health",
+            "description": "Specifically formulated with probiotic strains that promote healthy gums and teeth.",
+            "price": 18.99,
+            "category": 3,
+            "rating": 4.6,
+            "image_url": "http://your-website.com/media/oral_probiotics.jpg",
+            "image": "oral_probiotics.jpg",
+            "stock": 65,
+            "manufacturer": "HealthyGut Co.",
+            "expiration_date": "2025-12-31"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "products.product",
+        "fields": {
+            "sku": "HS10002",
+            "name": "Vitamin D3 (High Potency)",
+            "description": "Essential for bone health, including teeth, and supports a healthy immune response.",
+            "price": 11.99,
+            "category": 3,
+            "rating": 4.8,
+            "image_url": "http://your-website.com/media/vitamin_d3.jpg",
+            "image": "vitamin_d3.jpg",
+            "stock": 100,
+            "manufacturer": "VitaSource Inc.",
+            "expiration_date": "2026-06-30"
+        }
+    },
+    {
+        "pk": 18,
+        "model": "products.product",
+        "fields": {
+            "sku": "HS10003",
+            "name": "CoQ10 Supplement",
+            "description": "Powerful antioxidant that supports cardiovascular health and may promote gum health.",
+            "price": 22.99,
+            "category": 3,
+            "rating": 4.3,
+            "image_url": "http://your-website.com/media/coq10.jpg",
+            "image": "coq10.jpg",
+            "stock": 40,
+            "manufacturer": "NutriLife Co.",
+            "expiration_date": "2025-09-30"
+        }
+    },
+    {
+        "pk": 19,
+        "model": "products.product",
+        "fields": {
+            "sku": "HS10004",
+            "name": "Calcium & Magnesium Supplement",
+            "description": "Essential minerals for strong bones and teeth.",
+            "price": 13.99,
+            "category": 3,
+            "rating": 4.5,
+            "image_url": "http://your-website.com/media/calcium_magnesium.jpg",
+            "image": "calcium_magnesium.jpg",
+            "stock": 90,
+            "manufacturer": "BoneHealth Ltd.",
+            "expiration_date": "2026-03-31"
+        }
+    },
+    {
+        "pk": 20,
+        "model": "products.product",
+        "fields": {
+            "sku": "HS10005",
+            "name": "Chamomile Tea (Soothing Blend)",
+            "description": "Calming and relaxing herbal tea that may aid in reducing inflammation.",
+            "price": 7.99,
+            "category": 3,
+            "rating": 4.4,
+            "image_url": "http://your-website.com/media/chamomile_tea.jpg",
+            "image": "chamomile_tea.jpg",
+            "stock": 120,
+            "manufacturer": "HerbalTea Co.",
+            "expiration_date": "2026-01-31"
+        }
+    },
+    {
+        "pk": 21,
+        "model": "products.product",
+        "fields": {
+            "sku": "HS10006",
+            "name": "Peppermint Essential Oil",
+            "description": "Refreshing and invigorating oil, can be used in DIY mouthwash or toothpaste.",
+            "price": 12.99,
+            "category": 3,
+            "rating": 4.7,
+            "image_url": "http://your-website.com/media/peppermint_oil.jpg",
+            "image": "peppermint_oil.jpg",
+            "stock": 30,
+            "manufacturer": "EssentialOils Co.",
+            "expiration_date": "2027-06-30"
+        }
+    },
+    {
+        "pk": 22,
+        "model": "products.product",
+        "fields": {
+            "sku": "HS10007",
+            "name": "Oil Pulling Kit",
+            "description": "Includes coconut oil and instructions for the traditional practice of oil pulling for oral health.",
+            "price": 15.99,
+            "category": 3,
+            "rating": 4.1,
+            "image_url": "http://your-website.com/media/oil_pulling_kit.jpg",
+            "image": "oil_pulling_kit.jpg",
+            "stock": 50,
+            "manufacturer": "NaturalWellness Inc.",
+            "expiration_date": "2025-12-31"
+        }
+    },
+    {
+        "pk": 23,
+        "model": "products.product",
+        "fields": {
+            "sku": "DA10001",
+            "name": "Compact Travel Toothbrush Kit",
+            "description": "Includes a folding toothbrush, travel-size toothpaste, and a ventilated case.",
+            "price": 9.99,
+            "category": 4,
+            "rating": 4.5,
+            "image_url": "http://your-website.com/media/travel_toothbrush_kit.jpg",
+            "image": "travel_toothbrush_kit.jpg",
+            "stock": 75,
+            "manufacturer": "DentalGo Inc.",
+            "expiration_date": null
+        }
+    },
+    {
+        "pk": 24,
+        "model": "products.product",
+        "fields": {
+            "sku": "DA10002",
+            "name": "Water Flosser (Countertop Model)",
+            "description": "Removes plaque and debris from between teeth and below the gumline, ideal for deep cleaning.",
+            "price": 59.99,
+            "category": 4,
+            "rating": 4.7,
+            "image_url": "http://your-website.com/media/countertop_water_flosser.jpg",
+            "image": "countertop_water_flosser.jpg",
+            "stock": 20,
+            "manufacturer": "WaterFloss Inc.",
+            "expiration_date": null
+        }
+    },
+    {
+        "pk": 25,
+        "model": "products.product",
+        "fields": {
+            "sku": "DA10003",
+            "name": "Mouthguard Case",
+            "description": "Ventilated case for storing and protecting mouthguards or retainers.",
+            "price": 4.99,
+            "category": 4,
+            "rating": 4.2,
+            "image_url": "http://your-website.com/media/mouthguard_case.jpg",
+            "image": "mouthguard_case.jpg",
+            "stock": 100,
+            "manufacturer": "GuardCare Co.",
+            "expiration_date": null
+        }
+    },
+    {
+        "pk": 26,
+        "model": "products.product",
+        "fields": {
+            "sku": "DA10004",
+            "name": "Electric Toothbrush Stand",
+            "description": "Stylish stand to keep your electric toothbrush and replacement heads organized.",
+            "price": 12.99,
+            "category": 4,
+            "rating": 4.4,
+            "image_url": "http://your-website.com/media/electric_toothbrush_stand.jpg",
+            "image": "electric_toothbrush_stand.jpg",
+            "stock": 60,
+            "manufacturer": "BrushOrganizer Ltd.",
+            "expiration_date": null
+        }
+    },
+    {
+        "pk": 27,
+        "model": "products.product",
+        "fields": {
+            "sku": "DA10005",
+            "name": "Electric Toothbrush Travel Charger",
+            "description": "Portable charger for your electric toothbrush, perfect for on-the-go.",
+            "price": 19.99,
+            "category": 4,
+            "rating": 4.3,
+            "image_url": "http://your-website.com/media/electric_toothbrush_charger.jpg",
+            "image": "electric_toothbrush_charger.jpg",
+            "stock": 40,
+            "manufacturer": "ChargingGo Co.",
+            "expiration_date": null
+        }
+    },
+    {
+        "pk": 28,
+        "model": "products.product",
+        "fields": {
+            "sku": "PT10001",
+            "name": "Dental Mirror",
+            "description": "Basic dental mirror with a non-slip handle for intraoral examination.",
+            "price": 7.99,
+            "category": 5,
+            "rating": 4.6,
+            "image_url": "http://your-website.com/media/dental_mirror.jpg",
+            "image": "dental_mirror.jpg",
+            "stock": 80,
+            "manufacturer": "DentalTools Inc.",
+            "expiration_date": null
+        }
+    },
+    {
+        "pk": 29,
+        "model": "products.product",
+        "fields": {
+            "sku": "PT10002",
+            "name": "Dental Probe",
+            "description": "Double-ended probe for periodontal examination and detecting cavities.",
+            "price": 8.99,
+            "category": 5,
+            "rating": 4.5,
+            "image_url": "http://your-website.com/media/dental_probe.jpg",
+            "image": "dental_probe.jpg",
+            "stock": 100,
+            "manufacturer": "DentalTools Inc.",
+            "expiration_date": null
+        }
+    },
+    {
+        "pk": 30,
+        "model": "products.product",
+        "fields": {
+            "sku": "PT10003",
+            "name": "Dental Mirror & Probe Set",
+            "description": "Essential set for dental professionals or students.",
+            "price": 14.99,
+            "category": 5,
+            "rating": 4.8,
+            "image_url": "http://your-website.com/media/dental_mirror_probe_set.jpg",
+            "image": "dental_mirror_probe_set.jpg",
+            "stock": 50,
+            "manufacturer": "DentalTools Inc.",
+            "expiration_date": null
+        }
+    },
+    {
+        "pk": 31,
+        "model": "products.product",
+        "fields": {
+            "sku": "PT10004",
+            "name": "At-Home Tartar Removal Kit",
+            "description": "Basic tools for removing plaque and tartar buildup. (Use with caution).",
+            "price": 19.99,
+            "category": 5,
+            "rating": 3.8,
+            "image_url": "http://your-website.com/media/tartar_removal_kit.jpg",
+            "image": "tartar_removal_kit.jpg",
+            "stock": 30,
+            "manufacturer": "TartarEase Co.",
+            "expiration_date": null
+        }
+    },
+    {
+        "pk": 32,
+        "model": "products.product",
+        "fields": {
+            "sku": "PT10005",
+            "name": "Professional Dental Scaler",
+            "description": "Professional-grade scaler for removing heavy tartar and calculus.",
+            "price": 29.99,
+            "category": 5,
+            "rating": 4.3,
+            "image_url": "http://your-website.com/media/dental_scaler.jpg",
+            "image": "dental_scaler.jpg",
+            "stock": 20,
+            "manufacturer": "DentalPro Inc.",
+            "expiration_date": null
+        }
+    },
+    {
+        "pk": 33,
+        "model": "products.product",
+        "fields": {
+            "sku": "PT10006",
+            "name": "Dental Instrument Sterilization Pouch",
+            "description": "Self-sealing pouches for sterilizing dental instruments.",
+            "price": 12.99,
+            "category": 5,
+            "rating": 4.7,
+            "image_url": "http://your-website.com/media/sterilization_pouch.jpg",
+            "image": "sterilization_pouch.jpg",
+            "stock": 80,
+            "manufacturer": "SterileCare Ltd.",
+            "expiration_date": "2026-12-31"
+        }
+    },
+    {
+        "pk": 34,
+        "model": "products.product",
+        "fields": {
+            "sku": "GS10001",
+            "name": "Ultimate Whitening Gift Set",
+            "description": "Includes whitening toothpaste, strips, mouthwash, and a whitening pen for a brighter smile.",
+            "price": 39.99,
+            "category": 6,
+            "rating": 4.5,
+            "image_url": "http://your-website.com/media/whitening_gift_set.jpg",
+            "image": "whitening_gift_set.jpg",
+            "stock": 25,
+            "manufacturer": "BrightSmile Co.",
+            "expiration_date": "2025-06-30"
+        }
+    },
+    {
+        "pk": 35,
+        "model": "products.product",
+        "fields": {
+            "sku": "GS10002",
+            "name": "Travel Essentials Kit",
+            "description": "Compact travel toothbrush, toothpaste, floss, mouthwash, and a travel case.",
+            "price": 19.99,
+            "category": 6,
+            "rating": 4.6,
+            "image_url": "http://your-website.com/media/travel_gift_set.jpg",
+            "image": "travel_gift_set.jpg",
+            "stock": 40,
+            "manufacturer": "DentalGo Inc.",
+            "expiration_date": "2025-03-31"
+        }
+    },
+    {
+        "pk": 36,
+        "model": "products.product",
+        "fields": {
+            "sku": "GS10003",
+            "name": "Smile & Relax Basket",
+            "description": "Includes electric  aromatherapy candle, herbal tea, and a cozy eye mask.",
+            "price": 59.99,
+            "category": 6,
+            "rating": 4.8,
+            "image_url": "http://your-website.com/media/relax_gift_basket.jpg",
+            "image": "relax_gift_basket.jpg",
+            "stock": 15,
+            "manufacturer": "RelaxationGifts Co.",
+            "expiration_date": null
+        }
+    },
+    {
+        "pk": 37,
+        "model": "products.product",
+        "fields": {
+            "sku": "GS10004",
+            "name": "Healthy Smiles Gift Box",
+            "description": "Includes mouthwash, fluoride toothpaste, floss,  sugar-free gum, and a selection of healthy snacks.",
+            "price": 29.99,
+            "category": 6,
+            "rating": 4.4,
+            "image_url": "http://your-website.com/media/healthy_gift_box.jpg",
+            "image": "healthy_gift_box.jpg",
+            "stock": 30,
+            "manufacturer": "HealthyGifts Inc.",
+            "expiration_date": "2025-09-30"
+        }
+    }
+]

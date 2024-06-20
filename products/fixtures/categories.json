@@ -1,0 +1,50 @@
+[
+{
+    "model": "products.category",
+    "pk": 1,
+    "fields": {
+        "name": "dental_care",
+        "friendly_name": "Dental Care"
+    }
+},
+{
+    "model": "products.category",
+    "pk": 2,
+    "fields": {
+        "name": "oral_hygiene",
+        "friendly_name": "Oral Hygiene"
+    }
+},
+{
+    "model": "products.category",
+    "pk": 3,
+    "fields": {
+        "name": "health",
+        "friendly_name": "Health"
+    }
+},
+{
+    "model": "products.category",
+    "pk": 4,
+    "fields": {
+        "name": "dental_accessories",
+        "friendly_name": "Dental Accessories"
+    }
+},
+{
+    "model": "products.category",
+    "pk": 5,
+    "fields": {
+        "name": "professional_tools",
+        "friendly_name": "Professional Tools"
+    }
+},
+{
+    "model": "products.category",
+    "pk": 6,
+    "fields": {
+        "name": "gift_sets",
+        "friendly_name": "Gift Sets"
+    }
+}
+]

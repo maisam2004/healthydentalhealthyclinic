@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+{% block cortitle  %}
+    product detail
+    {% endblock %}
+{% block page%}products_details{% endblock %}
+{% block content %}
+<div class="overlay "></div>
+
+<div class="container-fluid" id="main-section">
+    <div class="row">
+        <div class="col12 col-md-6 col-lg-4 offset-lg-2 image-left-larg">
+            <div class="image-container my-5 rounded-3">
+                {% comment %}{% if product.image %}
+                <a href="{{ product.image.url }}" target="_blank">
+                       <img src="{{ product.image.url }}" class="card-img-top ms-5" alt="{{product.name}}."> 
+                    <img src="{{ MEDIA_URL }}{{ product.image }}" class="card-img-top ms-5" alt="{{ product.name }}">
+                </a>
+                {% else %}
+                <a href="{{ product.image.url }}" target="_blank">
+                    <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top" alt="{{product.name}}">
+                </a>
+                {% endif %}{% endcomment %}
+
+                {% if product.image %}
+                            <img class="card-img-top " src="{{ product.image.url }}" alt="{{ item.product.name }}">
+                {% else %}
+                            <img class="card-img-top " src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+              {% endif %}
+
+
+            </div>
+        </div>
+        <div class="col12 col-md-6 col-lg-4 details_container ">
+            
+                <p class="card-title mt-5">{{product.name}} </p>
+            <ul class="list-group list-group-flush " >
+                {% if product.rating %}
+                <li class="list-group-item d-flex justify-content-between" ><div>Rating </div><div class="border border-2 bg-primary text-light rounded-3 px-2">{{ product.rating }}<i class="fa-solid fa-star text-warning"></i></div>
+                </li>
+                {% else %}
+                <li class="list-group-item">NO Rating </li>
+                {% endif %}
+                <li class="list-group-item d-flex justify-content-between " ><div>Price</div><div> ${{product.price}}</div></li>
+                
+                {% if request.user.is_superuser %}
+                              <li  class="list-group-item">  <small class="ml-3">
+                                    <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                                </small> </li>
+                {% endif %}
+            </ul>
+            {% comment %}<p class="mt-1 px-1">{{ product.description }}</p>{% endcomment %} 
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                      Description :
+                    </button>
+                  </h2>
+                  <div id="flush-collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body p-4">{{ product.description }}.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                      Stock :
+                    </button>
+                  </h2>
+                  <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body text-info">{{ product.stock }} </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                      Expire :
+                    </button>
+                  </h2>
+                  <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">{{ product.expiration_date }}</div>
+                  </div>
+                </div>
+              </div>
+            <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
+                {% csrf_token %}
+                <div class="form-row">
+                    {% with product.has_sizes as s %}
+                    {% if s %}
+                    <div class="col-12">
+                        <p><strong>Size:</strong></p>
+                        <select class="form-control rounded-0 w-50" name="product_size" id='id_product_size'>
+                            <option value="xs">XS</option>
+                            <option value="s">S</option>
+                            <option value="m" selected>M</option>
+                            <option value="l">L</option>
+                            <option value="xl">XL</option>
+                        </select>
+                    </div>
+
+                    
+                    {% endif %}
+                    <div class="col-12">
+                        <p class="mt-3"><strong>Quantity:</strong></p>
+                        <div class="form-group w-50" style="position: unset;">
+                            <div class="input-group" >
+                                <div class="input-group-prepend" style="position: unset; z-index: -1;">
+                                    <button class="decrement-qty btn btn-dark rounded-start-pill " 
+                                        data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
+                                        <span class="icon " >
+                                            <i class="fas fa-minus"></i>
+                                        </span>
+                                    </button>
+                                </div>
+                                <input class="form-control qty_input" type="number"
+                                    name="quantity" value="1" min="1" max="{{ product.stock }}"
+                                    data-item_id="{{ product.id }}"
+                                    id="id_qty_{{ product.id }}">
+                                <div class="input-group-append">
+                                    <button class="increment-qty btn btn-dark rounded-end-pill"
+                                        data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
+                                        <span class="icon">
+                                            <i class="fas fa-plus"></i>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col{% if s %}-12 mt-2{% endif %}">
+                        <input type="submit" 
+                        {% if product.stock == 0 %}disabled{% endif %}
+                        class="btn btn-success rounded-pill text-uppercase mt-5 w-75"
+                         value="Add to Bag"><br>
+                        <a href="{% url 'products' %}" class="btn btn-outline-dark rounded-pill mt-1">
+                            <span class="icon">
+                                <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="text-uppercase">Keep Shopping</span>
+                        </a>
+                        
+                        <input type="submit" class="btn btn-success rounded-pill text-uppercase mt-5 d-none" value="Add to Bag">
+                    </div>
+                    <input type="hidden" name="redirect_url" value="{{ request.path }}">{# Finally, there's a hidden input field here which uses the request.path attribute #}
+                    {# To submit a field named redirect_url. Which will contain the current URL.#}
+                   {# By sending the current URL to the view we'll post this form too. #}
+                    {% endwith %}
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+{% endblock %}
+{% block 'extrajs' %}
+{{ block.super }}
+{% include "products/includes/quantity_input_script.html" %}
+
+{% endblock %}
