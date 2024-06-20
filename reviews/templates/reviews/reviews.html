@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load static %}
+{% load custom_filters %}
+{% block cortitle  %}
+    reviews
+    {% endblock %}
+    {% block page %} review_page {% endblock %}
+
+    {% block content %}
+<div class="container mt-2">
+    <div class="whole_reviews d-flex flex-wrap mb-4 gap-2">
+        <div class="review-intro text-center  mb-4 w-100 text-light">  
+            <p class="lead  bg-dark"  style="--bs-bg-opacity: .3;">Hear it from the grinners! 😁 Real patients, real smiles, real reviews. See what makes Healthy Dental Practice the talk of the town (and the brush of the teeth). 😉</p> 
+        </div>
+            {% for review in reviews %}
+                <div class="card m-4">
+                    {% if review.image %}
+                            <img src="{{ review.image.url }}" class="card-img-top" alt="Review Image">
+                        {% else %}
+                             <img src="{% static 'noimage.png' %}" class="card-img-top" alt="No Image">
+                    {% endif %} 
+
+                        <div class="card-body">
+                            {% comment %} <h5 class="card-title">Rating: {{ review.rating }} Stars</h5> {% endcomment %}
+                            <div class="card-title rating mb-2">
+                                {% for i in review.rating|range_filter  %}
+                                    <span class="fa-solid fa-star  text-warning bg-success fs-5 p-1"></span>
+                                {% endfor %}
+                            </div>
+                            <p class="card-text">By: 
+                                {% if review.appointment %}
+                                    {{ review.appointment.full_name }}  
+                                {% elif review.order %}
+                                    {{ review.order.full_name }}
+                                {% else %}
+                                    Anonymous  
+                                {% endif %}
+                            </p>
+                            <p class="card-text">{{ review.comment }}</p>
+                            <p class="card-text"><small class="text-muted">Reviewed on {{ review.created_at }}</small></p>
+                        </div>
+                        {% if review.user == request.user or request.user.is_staff %}
+                        <div class="card-footer d-flex justify-content-between bg-light">
+                            <a href="{% url 'edit_review' review.id %}" class="btn btn-outline-primary btn-md"><i class="fas fa-edit "></i></a>
+                            <a href="{% url 'delete_review' review.id %}" class="btn btn-outline-danger btn-md"><i class="fas fa-trash-alt "></i></a>
+                            
+                        </div>
+                         {% endif %}
+                </div>
+            
+        {% endfor %}
+
+        
+    </div>
+
+    
+           
+          
+          
+<hr>
+
+{% if not user.is_authenticated %}
+      <a class="btn btn-primary mb-5" href="{% url 'account_login' %}?next={{ request.path }}">Login to add a review</a>
+{% else %}
+<a href="{% url 'add_review' %}" class="btn btn-primary mb-5">Add Review</a>
+
+    {% endif %}
+         
+          
+
+
+    </div>
+</div>
+
+{% endblock %}
+{% block 'extrajs' %}
+{{ block.super }}
+
+
+{% endblock %}

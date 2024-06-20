@@ -1,0 +1,454 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block 'corecss'%}
+    <link fetchpriority="high" rel="preconnect" href="https://fonts.googleapis.com" >
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin >
+<link fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" >
+    <link fetchpriority="high" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"  >
+    <link rel="stylesheet" fetchpriority="high" href="{% static 'css/styles.css' %}" >
+    <link rel="icon" href="{% static 'favicon.ico' %}">
+    {% endblock %}
+    
+
+    {% block extracss %} 
+    
+    {% endblock %}
+   
+    {% block 'corjs' %}
+    <script src="https://cdn.lordicon.com/lordicon.js" ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script> {# jquery for date picking #}
+    <script src="https://kit.fontawesome.com/ecedfde1ad.js" crossorigin="anonymous" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
+    
+   
+    {% endblock %}
+    {% block 'stripjs' %}
+    
+    {% endblock %}
+
+
+    <title>{% block cortitle  %}{% endblock %}</title>
+</head>
+<body class="{% block page %}{% endblock %}">
+
+    {% block nav%} 
+    
+    <div  class="container-fluid top_nav_book" style="background-color: #19504d;">
+        <div class="row   text-center d-flex flex-row py-1">
+            <div class="hstack gap-3">
+            <div class=" p-1 ms-2 "><span><a class="text-light fw-bolder " href="tel:+12709960875" title="tel:+12709960875"><i class="fa-solid fa-phone px-1 "></i><span class="d-md-none">Call</span><span class="d-none d-md-inline-block">+12709960875</span></a></span></div>
+            <div class="vr"></div>
+            <div class=" p-1 "><span><a class="text-light fw-bolder" href="https://www.google.co.uk/maps/place/420+Morgantown+Rd,+Bowling+Green,+KY+42101,+USA/@36.9833831,-86.4709393,17z/data=!3m1!4b1!4m6!3m5!1s0x8865e92debfa2d25:0x4ac758012dd0c5f5!8m2!3d36.9833831!4d-86.4683644!16s%2Fg%2F11bw3z5yq8?entry=ttu" target="_blank"><i class="fa-solid fa-location-dot px-1"></i>Clinic</a></span></div>
+            <div class=" p-1 ms-md-auto "><a href="{% url 'book_appointment' %}" class="btn text-light fw-bold border rounded-pill " title="book appointment">Book Now</a></div>
+            
+            <div class="p1  ms-auto d-md-none ">
+                <a class="nav-link dropdown-toggle  " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-user fs-6 border p-2 rounded-circle {% if request.user.is_authenticated %}text-danger{% else %}text-light{% endif %}"></i>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                {% if request.user.is_authenticated %}
+                    {% if request.user.is_superuser %}
+                      {#   <li> <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a></li>#}
+                       <li><a class="dropdown-item {% if request.resolver_match.url_name == 'add_product' %}active{% endif %}" href="{% url 'add_product' %}" target="_blank">Product Management</a></li>
+
+                       {# <li> <a href="{% url 'admin:index' %}" target="_blank" class="dropdown-item">Admin</a></li> #}
+                       <li><a class="dropdown-item {% if request.resolver_match.url_name == 'admin:index' %}active{% endif %}" href="{% url 'admin:index' %}" target="_blank">Admin</a></li>
+                       <li><a class="nav-link" href="{% url 'admin_list_appointments' %}">View All Appointments</a></li>
+                    {% endif %}
+                    <li><a class="nav-link {% if request.resolver_match.url_name == 'profile' %}active{% endif %}" href="{% url 'profile' %}" target="_blank">My Profile</a></li>
+                    <li> <a href="{% url 'account_logout' %}" class="dropdown-item" target="_blank">Logout <i class="fa-solid fa-right-from-bracket"></i></a></li>
+                {% else %}
+                <li><a class="dropdown-item {% if request.resolver_match.url_name == 'account_signup' %}active{% endif %}" href="{% url 'account_signup' %}" target="_blank">Register</a></li>
+                <li>  <a href="{% url 'account_login' %}" class="dropdown-item" target="_blank" title='login'><span class="d-none "  >Login</span> <i class="fa-solid fa-right-to-bracket"></i></a></li>
+                
+                {% endif %}
+                </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-light bg-light border-bottom">
+        <div class="container-fluid">
+            <a class="navbar-brand mx-auto d-md-none" href="{% url 'home' %}">
+                <img class="mobile_logo" src="{% static 'logo1.png' %}" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item d-none">
+                        <a class="navbar-brand mx-auto" href="#">
+                            <img src="{% static 'tooth_logo1.png' %}" alt="Logo">
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Dentistry Services
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                            <li><a class="dropdown-item {% if request.resolver_match.url_name == 'general' %}active{% endif %}" href="{% url 'general' %}" target="_blank">General</a></li>
+                            <li><a class="dropdown-item {% if request.resolver_match.url_name == 'cosmetic' %}active{% endif %}" href="{% url 'cosmetic' %}" target="_blank">Cosmetic</a></li>
+                            <li><a class="dropdown-item {% if request.resolver_match.url_name == 'restorative' %}active{% endif %}" href="{% url 'restorative' %}" target="_blank">Restorative</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.resolver_match.url_name == 'reviews' %}active{% endif %}" href="{% url 'reviews' %}" target="_blank">Reviews</a>
+                        
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.resolver_match.url_name == 'products' %}active{% endif %} dental_store_nav " href="{% url 'products' %}" target="_blank">Dental Store</a>
+                    </li>
+                    <li class="nav-item d-none d-md-block">
+                        <a class="navbar-brand mx-auto" href="{% url 'home' %}" target="_blank">
+                            <img class="desktop_logo" src="{% static 'logo1.png' %}" alt="Logo">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.resolver_match.url_name == 'contact' %}active{% endif %}" href="{% url 'contact' %}" target="_blank">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}" href="{% url 'about' %}" target="_blank">About</a>
+                    </li>
+                    <li class="nav-item d-none d-md-inline-block dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="user account">
+                            <i class="fa-solid fa-user fs-6 border p-2 rounded-circle {% if request.user.is_authenticated %}text-danger{% else %}text-dark{% endif %}"></i>
+
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                            {% if request.user.is_authenticated %}
+                                {% if request.user.is_superuser %}
+                                    
+                                    <li><a class="dropdown-item {% if request.resolver_match.url_name == 'add_product' %}active{% endif %}" href="{% url 'add_product' %}" target="_blank">Product Management</a></li>
+                                    
+                                    <li><a class="dropdown-item {% if request.resolver_match.url_name == 'admin:index' %}active{% endif %}" href="{% url 'admin:index' %}" target="_blank">Admin</a></li>
+                                    <li><a class="nav-link" href="{% url 'admin_list_appointments' %}">View All Appointments</a></li>
+                                {% endif %}
+                                <li><a class="nav-link {% if request.resolver_match.url_name == 'profile' %}active{% endif %}" href="{% url 'profile' %}" target="_blank">My Profile</a></li>
+                                <li><a href="{% url 'account_logout' %}" class="dropdown-item" target="_blank">Logout <i class="fa-solid fa-right-from-bracket"></i></a></li>
+                            {% else %}
+                                <li><a class="dropdown-item {% if request.resolver_match.url_name == 'account_signup' %}active{% endif %}" href="{% url 'account_signup' %}" target="_blank">Register</a></li>
+                                <li><a href="{% url 'account_login' %}" class="dropdown-item" title="login">Login <i class="fa-solid fa-right-to-bracket"></i></a></li>
+                            {% endif %}
+                        </ul>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link {% if request.resolver_match.url_name == 'view_basket' %}active{% endif %}" href="{% url 'view_basket' %}">
+                            <div class="text-center basket_icon_price">
+                                {% if grand_total %}
+                                    <div>
+                                        <i class="fas fa-shopping-bag fa-lg"></i>
+                                        <span class="badge d-md-inline position-sm-relative fw-bold text-danger rounded-pill">{{product_count}}</span>
+                                    </div>
+                                    <p class="my-0">
+                                        ${{ grand_total|floatformat:2 }}
+                                    </p>
+                                {% else %}
+                                    <div>
+                                        <i class="fas fa-shopping-bag fa-lg"></i>
+                                    </div>
+                                    <p class="my-0">
+                                        $0.00
+                                    </p>
+                                {% endif %}
+                            </div>
+                            
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    
+    {% comment %} {% if request.resolver_match.url_name == 'products' %} {% endcomment %}
+    {% if request.resolver_match.url_name == 'products'  %}
+        <div class="container-fluid py-2" style="background-color: #f8f9fa;">
+            <div class="d-flex justify-content-between justify-content-md-center"> 
+                <a class="align-self-center {% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_basket' %}">
+                    <div class="text-center basket_icon_price">
+                        {% comment %} <div><i class="fas fa-shopping-bag fa-lg"></i></div> {% endcomment %}
+                        <p class="my-0 position-relative rounded-circle btn border-info d-md-none">
+                            {% if grand_total %}
+                                {% comment %} ${{ grand_total|floatformat:2 }} {% endcomment %}
+                                
+                                <span class="text-danger fw-bold product_count ">{{product_count}}</span><i class="fas fa-shopping-bag fa-lg text-info position-relative"></i>
+                                
+                            {% else %}
+                            <i class="fas fa-shopping-bag fa-lg text-info position-relative"></i>
+                            {% endif %}
+                        </p>
+                    </div>
+                </a>
+                <form class="form-inline d-flex justify-content-center position-relative  flex-shrink-1" method="GET" action="{% url 'products' %}">
+                                
+                            <!-- Search bar HTML -->
+                            <label for="searchbar"> </label>
+                                <input type="text" name="searchbar" class="p-2 w-100  rounded-pill" id="searchbar">
+                                <!-- <input type="submit" class=" rounded-pill p-1" value="&#xf014"> -->
+                                <button type="submit" class="btn  search_icon  ">
+                                    {% comment %} <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> {% endcomment %}
+                                    <lord-icon
+                                    src="https://cdn.lordicon.com/kkvxgpti.json"
+                                    trigger="hover" style="width:40px;height:30px"></lord-icon>
+                                </button>
+            
+                            </form>
+                
+                    
+                
+            </div>
+
+            <div class="row category-row d-none d-md-block">
+                <div class="container">
+                    <ul class="category-list d-flex justify-content-center text-center">
+                        <li><a class="category-link px-2 bg-danger">Categories:</a></li>
+                        <li><a class="category-link px-2 {% if request.GET.category == 'dental_care' %}selected_category{% endif %}" href="{% url 'products' %}?category=dental_care">Dental Care</a></li>
+                        <li><a class="category-link px-2 {% if request.GET.category == 'oral_hygiene' %}selected_category{% endif %}" href="{% url 'products' %}?category=oral_hygiene">Oral Hygiene</a></li>
+                        <li><a class="category-link px-2 {% if request.GET.category == 'health' %}selected_category{% endif %}" href="{% url 'products' %}?category=health">Health</a></li>
+                        <li><a class="category-link px-2 {% if request.GET.category == 'dental_accessories' %}selected_category{% endif %}" href="{% url 'products' %}?category=dental_accessories">Dental Accessories</a></li>
+                        <li><a class="category-link px-2 {% if request.GET.category == 'professional_tools' %}selected_category{% endif %}" href="{% url 'products' %}?category=professional_tools">Professional Tools</a></li>
+                        <li><a class="category-link px-2 {% if request.GET.category == 'gift_sets' %}selected_category{% endif %}" href="{% url 'products' %}?category=gift_sets">Gift Sets</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        {% elif  request.resolver_match.url_name == 'product_detail'   %}
+
+        <div class="container-fluid py-2 border-bottom d-md-none" style="background-color: #f8f9fa;">
+            <div class="d-flex justify-content-between  ">
+                <div class="delivery_fast align-self-center fw-semibold">Fast delivery <img src="{% static 'fast_del.png'%}"></div> 
+                <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_basket' %}">
+                    
+                        {% comment %} <div><i class="fas fa-shopping-bag fa-lg"></i></div> {% endcomment %}
+                        
+                            {% if grand_total %}
+                                
+                                <div class=" basket_icon_price">
+                                    {% comment %}  <div><i class="fas fa-shopping-bag fa-lg"></i></div> {% endcomment %}
+                                    <p>
+                                         <div><i class="fas fa-shopping-bag fa-lg d-inline"></i><span class="badge d-inline position-sm-relative fw-bold  text-danger rounded-pill ">{{product_count}}</span></div>
+                                             ${{ grand_total|floatformat:2 }}
+                                     </p>
+                                 </div>
+                                
+                            {% else %}
+                            <i class="fas fa-shopping-bag fa-lg text-info position-relative"></i>
+                            $0.00
+                            {% endif %}
+                        </p>
+                    
+                </a>
+                
+                
+                    
+                
+            </div>
+        </div>
+        {% endif %}
+    
+    {% endblock %}
+
+    
+    
+    
+    {% if messages %}
+    <div class="message_container position-fixed top-1 end-0">
+        {% for message in messages %}
+        {% with message.level as level %}
+                    {% if level == 40 %}
+                        {% include 'includes/toast/toast_error2.html' %}
+                    {% elif level == 30 %}
+                        {% include 'includes/toast/toast_warning2.html' %}
+                    {% elif level == 25 %}
+                        {% include 'includes/toast/toast_success2.html' %}
+                    {% else %}
+                        {% include 'includes/toast/toast_info2.html' %}
+                    {% endif %}
+         {% endwith %}
+
+        {% endfor %}
+    </div>
+
+
+{% endif %}
+    
+    {% comment %} <h6 id="top">base.html</h6> {% endcomment %}
+    
+    {% block content%}
+    
+    {% endblock %}
+    
+    
+    {% block footer%}
+    <div class="footer container-fluid     ">
+    
+        
+        <div class="container-md  fstack   ">
+           
+    
+            <div class="card describtion " style="width:18rem;">
+                
+                <div class="card-body mt-0 first_card">
+                    <img src="{% static 'logo12.png' %}" class="card-img-top mb-0" alt="company logo">
+                    <p class="card-text">“Dentistry practice committed to enhancing smiles through state-of-the-art procedures.”</p>
+            
+                    <p class="card-text social">
+                        <a href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2Findex.php%2F"   target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://x.com/?lang=en-ie"   target="_blank"><i class="fa-brands fa-twitter"></i></a> 
+                        <a href="https://www.instagram.com/?hl=en"  target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://web.whatsapp.com/" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                   <p>
+                
+                
+                
+                </div>
+            </div>
+            <div class="card   links" style="width:18rem;">
+                
+                <div class="card-header p-0 ">Company</div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><a class="list-group-item {% if request.resolver_match.url_name == 'about' %}active{% endif %}" href="{% url 'about' %}" target="_blank">About Us</a></li>
+                    <li class="list-group-item"><a class="list-group-item {% if request.resolver_match.url_name == 'fees' %}active{% endif %}" href="{% url 'fees' %}" target="_blank">Fees</a></li>
+                    <li class="list-group-item"><a class="list-group-item {% if request.resolver_match.url_name == 'products' %}active{% endif %}" href="{% url 'products' %}" target="_blank">Dental Store</a></li>
+                    <li class="list-group-item"><a class="list-group-item {% if request.resolver_match.url_name == 'reviews' %}active{% endif %}" href="{% url 'reviews' %}" target="_blank">Reviews</a></li>
+                    <li class="list-group-item"><a class="list-group-item {% if request.resolver_match.url_name == 'privacy' %}active{% endif %}" href="{% url 'privacy' %}" target="_blank">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="card hours " style="width:18rem;">
+                
+                <div class="card-header p-0">
+                    Oppening Times
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Mon to Fri: 8:00am - 4:00pm <i class="fa-regular fa-clock"></i></li>
+                    <li class="list-group-item">Sat: 9:30am - 3:00pm <i class="fa-regular fa-clock"></i></li>
+                    <li class="list-group-item">Sun: Closed <i class="fa-solid fa-ban"></i></li>
+                  </ul>
+            </div>
+            
+
+              <div class="card contact  " style="width:18rem;">
+                <div class="card-header p-0">
+                    Contact Us
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><i class="fa-solid fa-square-phone"></i>:+12709960875</li>
+                    <li class="list-group-item"><i class="fa-regular fa-envelope"></i>:info@hdc.com</li>
+                    <li class="list-group-item "><i class="fa-solid fa-location-dot" style="color: #fafafa;"></i>:420 Morgantown Rd, Bowling Green, KY 42101, US
+                    </li>
+                    
+                  </ul>
+            </div>
+    
+    
+        </div>
+    
+    </div>
+    <footer class="container-fluid bg-light text-center p-1 position-relative">
+        
+        <div class="info-part d-flex justify-content-center  gap-4">
+            <div class="icon text-center mt-1 "><i class="fa-solid fa-truck"></i> <p>fast delivery</p></div>
+            <div class="icon text-center mt-1"><i class="fa-solid fa-arrows-rotate"></i> <p>Free returns</p></div>
+            
+
+        </div>
+        <hr>
+    <p class="p-1">© HEALTHYDENTALCLINIC DENTAL STORE | healthydentalclinic.co.uk is a registered trademark. All rights reserved.</p>
+    <a href="#top" class="btn btn-dark mt-2 mb-2 position-absolute top-0 start-0" style="width:4em" aria-label="Back to page top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+    </footer>
+    
+    {% endblock %}
+    
+    {% block 'extrajs' %}
+    <script >
+        $('.btt-link').click(function(e){
+            window.scrollTo(0,0)
+        });
+    
+        $(document).ready(function() {
+            {% if messages %}
+                $('.toast').toast('show');
+            {% endif %}
+        });
+
+
+        window.addEventListener('load', function() {
+            const fadeInImages = document.querySelectorAll('.fade-in-image');
+          
+            function checkImageVisibility() {
+              fadeInImages.forEach((image) => {
+                const imagePosition = image.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+          
+                // Check if the image is within the viewport
+                if (imagePosition < windowHeight * 0.8 && imagePosition > -windowHeight * 0.2) {
+                  image.classList.add('in-view');
+                } else {
+                  image.classList.remove('in-view');
+                }
+              });
+            }
+          
+            window.addEventListener('scroll', checkImageVisibility);
+            checkImageVisibility(); // Check initially when the page loads
+          });
+    
+
+
+          // Detect when the user scrolls to the reviews section
+          window.addEventListener('scroll', function() {
+            const reviewsSection = document.querySelector('.reviews');
+            
+            // Check if the reviewsSection exists
+            if (reviewsSection) {
+                const cards = reviewsSection.querySelectorAll('.review-card');
+                
+                // Calculate the position of the reviews section relative to the viewport
+                const rect = reviewsSection.getBoundingClientRect();
+                const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
+                
+                // Update card opacity if the section is visible
+                if (isVisible) {
+                    cards.forEach(card => {
+                        card.style.opacity = 1; // Set the desired opacity value
+                    });
+                }
+            }
+            
+
+            
+                
+            
+
+        });
+        {% if is_homepage %}  
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const companies = document.querySelectorAll('.companies');
+            companies.forEach((company, index) => {
+                setTimeout(() => {
+                    company.classList.add('visible');
+                }, index * 360); // Delay each image's animation by 300ms
+            });
+        });
+        {% endif %}
+
+ 
+</script>
+{% endblock %}
+   
+
+</body>
+</html>
