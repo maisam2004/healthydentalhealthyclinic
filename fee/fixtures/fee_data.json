@@ -1,0 +1,193 @@
+[
+{
+    "model": "fee.category",
+    "pk": 1,
+    "fields": {
+        "name": "General"
+    }
+},
+{
+    "model": "fee.category",
+    "pk": 2,
+    "fields": {
+        "name": "Cosmetic"
+    }
+},
+{
+    "model": "fee.category",
+    "pk": 3,
+    "fields": {
+        "name": "Restorative"
+    }
+},
+{
+    "model": "fee.fee",
+    "pk": 1,
+    "fields": {
+        "service": "X-ray",
+        "category": 1,
+        "description": "images of your teeth ",
+        "amount": "50.00"
+    }
+},
+{
+    "model": "fee.fee",
+    "pk": 3,
+    "fields": {
+        "service": "Fluoride treatments",
+        "category": 1,
+        "description": "Polishes Away Stains",
+        "amount": "130.00"
+    }
+},
+{
+    "model": "fee.fee",
+    "pk": 4,
+    "fields": {
+        "service": "Emergency treatments",
+        "category": 1,
+        "description": "Emergency Appointment",
+        "amount": "110.00"
+    }
+},
+{
+    "model": "fee.fee",
+    "pk": 5,
+    "fields": {
+        "service": "Hygienist",
+        "category": 1,
+        "description": "leaning teeth, taking X-rays",
+        "amount": "200.00"
+    }
+},
+{
+    "model": "fee.fee",
+    "pk": 6,
+    "fields": {
+        "service": "Mouthguard",
+        "category": 1,
+        "description": "prevent conditions caused by teeth grinding",
+        "amount": "80.00"
+    }
+},
+{
+    "model": "fee.fee",
+    "pk": 7,
+    "fields": {
+        "service": "Teeth Whitening",
+        "category": 2,
+        "description": "Brighten your smile ",
+        "amount": "145.00"
+    }
+},
+{
+    "model": "fee.fee",
+    "pk": 8,
+    "fields": {
+        "service": "Porcelain Veneers",
+        "category": 2,
+        "description": " Custom-made thin shells that cover the front surface of your teeth",
+        "amount": "320.00"
+    }
+},
+{
+    "model": "fee.fee",
+    "pk": 9,
+    "fields": {
+        "service": "Dental Bonding",
+        "category": 2,
+        "description": " solution for minor damage or gaps in teeth",
+        "amount": "300.00"
+    }
+},
+{
+    "model": "fee.fee",
+    "pk": 10,
+    "fields": {
+        "service": "Invisalign",
+        "category": 2,
+        "description": "aligns teeth",
+        "amount": "250.00"
+    }
+},
+{
+    "model": "fee.fee",
+    "pk": 11,
+    "fields": {
+        "service": "Smile Makeovers",
+        "category": 2,
+        "description": "achieve your perfect smile",
+        "amount": "800.00"
+    }
+},
+{
+    "model": "fee.fee",
+    "pk": 12,
+    "fields": {
+        "service": "Tooth Filling",
+        "category": 3,
+        "description": "Composite filling",
+        "amount": "145.00"
+    }
+},
+{
+    "model": "fee.fee",
+    "pk": 13,
+    "fields": {
+        "service": "Crowns",
+        "category": 3,
+        "description": "tooth-shaped cap",
+        "amount": "360.00"
+    }
+},
+{
+    "model": "fee.fee",
+    "pk": 14,
+    "fields": {
+        "service": "Implant",
+        "category": 3,
+        "description": "permanent solution for missing teeth",
+        "amount": "400.00"
+    }
+},
+{
+    "model": "fee.fee",
+    "pk": 15,
+    "fields": {
+        "service": "Bridges",
+        "category": 3,
+        "description": "permanent appliance used to replace one or more",
+        "amount": "800.00"
+    }
+},
+{
+    "model": "fee.fee",
+    "pk": 16,
+    "fields": {
+        "service": "Root Canal",
+        "category": 3,
+        "description": "Root canal treatment",
+        "amount": "600.00"
+    }
+},
+{
+    "model": "fee.fee",
+    "pk": 17,
+    "fields": {
+        "service": "New Patient Offer",
+        "category": 1,
+        "description": "New patient Offer",
+        "amount": "69.00"
+    }
+},
+{
+    "model": "fee.fee",
+    "pk": 18,
+    "fields": {
+        "service": "Special Offer",
+        "category": 2,
+        "description": "Special Offer",
+        "amount": "199.00"
+    }
+}
+]

@@ -1,0 +1,187 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block cortitle %}basket{% endblock %}
+{% block page%}basket{% endblock %}
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container mb-2 bg-light">
+        <div class="row">
+            <div class="col">
+                <hr>
+                <h2 class="logo-font mb-4">Shopping Bag</h2>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {% if bag_items %}
+                    <div class="table-responsive rounded">
+                        <table class="table table-sm table-borderless">
+                            <thead class="text-black border text-center">
+                                <tr>
+                                    <th scope="col">Product Info</th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                    <th scope="col">Qty</th>
+                                    <th scope="col">Price</th>
+                                </tr>
+                            </thead>
+
+
+                            {% for item in bag_items %}
+                                <tr>
+                                    <td class="p-3 w-25">
+                                       
+                                        <a href="{% url 'product_detail' item.product.id %}" class="d-flex justify-content-center"><img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}"></a>
+
+                                        <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                                        <p class="my-0"><strong> </strong>{% if item.product.has_sizes %}Size:{{ item.size|upper }}{% endif %}</p>
+                                        <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
+                                    </td>
+                                    <td></td>
+                                    <td class="py-3 ">
+                                        <p class="my-0 text-center"></p>
+                                    </td>
+                                    
+                                    <td class=" text-center pt-5">
+                                       
+                                        <form class="form update-form py-3" action="{% url 'update_basket' %}" method="POST">
+                                            {% csrf_token %}
+                                            <input type="hidden" name="item_id" value="{{ item.item_id }}">
+                                            <input type="hidden" name="action" value="update"> <!-- or value="remove" for remove action -->
+                                            <div class="form-group ">
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">                                                    
+                                                        <button type="submit" class="decrement-qty btn btn-sm btn-dark rounded-0 rounded-start-pill" 
+                                                            data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
+                                                            <span >
+                                                                <i class="fas fa-minus fa-sm"></i>
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                    <label class=" id_qty_{{ item.item_id }}" for="id_qty_{{ item.item_id }}"></label>  
+                                                    <input class="form-control form-control-sm qty_input" type="number"
+                                                        name="quantity" value="{{item.quantity}}" min="1" max="{{item.product_quantity}}"
+                                                        data-item_id="{{ item.item_id  }}"
+                                                        id="id_qty_{{ item.item_id }}">
+                                                    <div class="input-group-append">
+                                                        <button class="increment-qty btn btn-sm btn-dark rounded-0 rounded-end-circle"
+                                                            data-item_id="{{ item.item_id  }}" id="increment-qty_{{ item.item_id }}">
+                                                            <span>
+                                                                <i class="fas fa-plus fa-sm"></i>
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+
+                                        </form>
+                                    
+                                        <a href="{% url 'update_basket' %}?item_id={{ item.item_id }}&action=update" class="update-link  me-4  btn btn-outline-info " title="update"><span class="d-none d-md-inline-block">Update</span><i class="fa-solid fa-arrows-rotate"></i></a>
+                                        <a href="{% url 'update_basket' %}?item_id={{ item.item_id }}&action=remove" class="remove-item  float-right  btn btn-outline-danger " id="remove_{{ item.item_id }}"  title="remove item"><span class="d-none d-md-inline-block">Remove </span><i class="fa-solid fa-trash-can"></i></a>
+
+                                    </td>
+                                    <td class="py-3">
+                                        <p class="my-3 pt-4 text-center fw-semibold ">${{ item.product.price }}</p>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            <tr>
+                                <td colspan="5" class="pt-5 text-end pe-3">
+                                    <h6><strong>Bag Total: ${{ total|floatformat:2 }}</strong></h6>
+                                    <h6 class="text-primary">Delivery <i class="fa-solid fa-truck "></i>: ${{ delivery|floatformat:2 }}</h6>
+                                    <h4 class="mt-4"><strong>Subtotal: ${{ grand_total|floatformat:2 }}</strong></h4>
+                                    {% if free_delivery_delta > 0 %}
+                                        <p class="mb-3 text-primary">
+                                            You could get free delivery by spending just <strong>${{ free_delivery_delta }}</strong> more!
+                                        </p>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" class="text-end  ">
+                                    <a href="{% url 'products' %}" class="btn btn-outline-dark rounded-pill btn-lg">
+                                        <span class="icon">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </span>
+                                        <span class="text-uppercase">Keep Shopping</span>
+                                    </a>
+                                    <a href="{% url 'checkout' %}" class="btn btn-success rounded-pill btn-lg secure_checkout">
+                                        <span class="text-uppercase">Secure Checkout</span>
+                                        <span class="icon">
+                                            <i class="fas fa-lock"></i>
+                                        </span>
+                                    </a>
+                                </td>
+                                
+                            </tr >
+                            <tr >
+                                <td colspan="5" class="text-end credit-cards">
+                                    <i class="fa-brands fa-cc-visa"></i>
+                                    <i class="fa-brands fa-cc-mastercard"></i>
+                                    <i class="fa-brands fa-cc-stripe me-4"></i>
+
+                                    </td>
+                                
+                            </tr>
+                        </table>
+                    </div>
+                {% else %}
+                    <p class="lead mb-5">Your bag is empty.</p>
+                    <a href="{% url 'products' %}" class="btn btn-outline-dark rounded-pill btn-lg mb-4">
+                        <span class="icon">
+                            <i class="fas fa-chevron-left"></i>
+                        </span>
+                        <span class="text-uppercase  ">Keep Shopping</span>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block 'extrajs' %}
+{{ block.super }}
+{% include "products/includes/quantity_input_script.html" %}
+<script >
+    // Update quantity on click
+    $('.update-link').click(function(e) {
+        e.preventDefault();
+        console.log("Update link clicked")
+        var form = $(this).prev('.update-form');
+        form.find('input[name="action"]').val('update'); // Set action to update
+        form.submit(); // Submit the form
+    })
+
+    // Remove item and reload on click
+    
+    $('.remove-item').click(function(e) {
+        e.preventDefault(); // Prevent default link behavior
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var form = $('<form>', {
+            'action': '{% url "update_basket" %}',
+            'method': 'post'
+        });
+        var inputItemId = $('<input>', {
+            'type': 'hidden',
+            'name': 'item_id',
+            'value': itemId
+        });
+        var inputAction = $('<input>', {
+            'type': 'hidden',
+            'name': 'action',
+            'value': 'remove'
+        });
+        var inputCsrfToken = $('<input>', {
+            'type': 'hidden',
+            'name': 'csrfmiddlewaretoken',
+            'value': csrfToken
+        });
+    
+        form.append(inputItemId, inputAction, inputCsrfToken).appendTo('body').submit();
+    });
+</script>
+
+{% endblock %}

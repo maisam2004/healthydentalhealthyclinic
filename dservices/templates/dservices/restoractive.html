@@ -1,0 +1,162 @@
+{% extends "base.html" %}
+{% block cortitle %}restoractive{% endblock %}
+{% block page%}restoractive{% endblock %}
+{% load static %}
+{% block content %}
+<section id="general-dentistry" class=" bg-primary-subtle">
+    <div class="container pt-5">
+      <div class="row bg-light mb-2 p-4 rounded-4">
+      <h1>Restorative Dentistry: Bringing Back Your Smile</h1>
+      <p class="intro">At Healthy Dental Clinic, our Restorative Dentistry services focus on repairing and replacing teeth to enhance both oral health and chewing function. Whether you’re dealing with missing teeth, damaged enamel, or other dental issues, we’re here to help you regain confidence in your smile.</p>
+      </div >
+    
+      <div class="row align-items-center rounded-4"> 
+        <div class="col-md-6 order-md-2 mt-4"> 
+          <img src="{% static 'restoractive_hero.jpeg' %}" alt="Dentist Examining Patient" class="img-fluid rounded"> 
+        </div>
+        <div class="col-md-6 order-md-1">
+          <h2>What Is Restorative Dentistry?</h2>
+          <p class="fs-5">branch of dentistry that focuses on replacing damaged or missing teeth. This is done to improve overall dental health and restore chewing function. Here’s what we can do for you:</p>
+        </div> 
+      </div>
+  
+      <div class="row align-items-center bg-light mt-5 rounded-4 py-5"> 
+        <div class="col-md-6"> 
+          {% comment %} <img src="{% static 'dental_cleaning.jpg' %}" alt="Dental Cleaning" class="img-fluid rounded"> {% endcomment %}
+          <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="10000">
+                <img src="{% static 'dental_fillings1.webp' %}" class="d-block w-100" alt="filling image">
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <img src="{% static 'implants2.webp' %}" class="d-block w-100" alt="patient implant">
+              </div>
+              <div class="carousel-item">
+                <img src="{% static 'implants3.jpg' %}" class="d-block w-100" alt="patient after surgery">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        </div>
+        <div class="col-md-6 d-none d-md-block"> 
+          <h2 style="color:rgba(0, 109, 159, 1);">Fillings:</h2>
+          <p class="fs-5 ps-1">We use tooth-colored fillings to repair cavities and restore the natural appearance of your teeth.</p>
+            <h2>Crowns:</h2>
+            <p class="fs-5 ps-1">Crowns (or dental caps) protect weakened or damaged teeth. They provide strength, improve aesthetics, and allow you to bite and chew comfortably.</p>
+            <h2>Dental Bonding: </h2>
+            <p class="fs-5 ps-1">  Bridges replace missing teeth by anchoring artificial teeth to adjacent healthy teeth. They restore your smile and maintain proper alignment.</p>
+            <h2>Implants:  </h2>
+            <p class="fs-5 ps-1"> Dental implants are a permanent solution for missing teeth. They consist of titanium posts surgically placed in your jawbone, topped with lifelike crowns. Implants look, feel, and function like natural teeth.</p>
+
+
+        </div>
+        <div class="accordion accordion-flush col-md-6 d-md-none" id="accordionFlushExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="true" aria-controls="flush-collapseOne">
+             Fillings
+              </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushExample" style="">
+              <div class="accordion-body">We use tooth-colored fillings to repair cavities and restore the natural appearance of your teeth.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+              Crowns:
+              </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample" style="">
+              <div class="accordion-body">Crowns (or dental caps) protect weakened or damaged teeth. They provide strength, improve aesthetics, and allow you to bite and chew comfortably.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+              Dental Bonding:
+              </button>
+            </h2>
+            <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">Bridges replace missing teeth by anchoring artificial teeth to adjacent healthy teeth. They restore your smile and maintain proper alignment.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+            Implants:
+            </button>
+          </h2>
+          <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Dental implants are a permanent solution for missing teeth. They consist of titanium posts surgically placed in your jawbone, topped with lifelike crowns. Implants look, feel, and function like natural teeth.</div>
+          </div>
+        </div>
+        </div>
+
+      </div>
+
+
+      
+
+      <div class="row align-items-center py-5 px-2"> 
+       
+        <div class="col-md-12 order-md-1 text-center">
+          <h2 class="">When restoractive dentistry might be an option if you have?</h2>
+          <ul class="reason_cosmetic fw-medium fs-5">
+            <li><span class="text-info-emphasis fw-semibold">Cavities / tooth decay.</span></li> 
+            <li><span class="text-info-emphasis fw-semibold">Damaged or broken teeth.</span></li>
+            <li><span class="text-info-emphasis fw-semibold">Missing teeth.</span></li>
+        </ul>
+        
+            <a href="{% url 'book_appointment' %}" class="btn text-center rounded-pill ">Book Appointment</a>
+            
+
+            <p class="reasons fw-medium pt-2 ">
+              Smile with confidence.<br>
+               Schedule a consultation with Healthy Dental Clinic today to learn more about our restorative dentistry services and discover the right solution for your smile.</p>
+
+        </div> 
+      </div>
+
+
+      <div class="container-fluid align-items-center  p-2  rounded-4">
+        <h2>Our Fees</h2>
+        <table class="fee-table table table-striped table-secondary-subtle">
+          <thead>
+              <tr>
+                  <th scope="col">Service</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Price</th>
+              </tr>
+          </thead>
+          <tbody>
+              {% for fee in restorative_fees %}
+              <tr>
+                  <td>{{ fee.service }}</td>
+                  <td>{{ fee.description }}</td>
+                  <td>${{ fee.amount }}</td>
+              </tr>
+              {% endfor %}
+          </tbody>
+      </table>
+        <p class="discount-note text-danger">
+          Join us and enjoy a 20% discount on fees!<br>
+          <span class="text-dark ">call now : 020365558489</span>
+        </p>
+      </div>
+
+      
+  
+      </div>
+  </section>
+
+  
+
+{% endblock %}

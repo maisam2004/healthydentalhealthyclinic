@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block cortitle %}contact{% endblock %}
+{% block page %} contact-page {% endblock %}
+{% block content %}
+
+<div class="container mt-4 ">
+ 
+      <div class="col-md-6 offset-md-3">
+        <h1 class="text-center">Contact Us</h1>
+        <p class="fs-6  " style="background-color: rgba(227, 233, 233, 0.3);padding: 1em;">Your feedback and inquiries are important to us. We take them seriously and are committed to addressing your needs promptly. Please reach out to us with any questions, concerns, or suggestions, and we'll ensure your satisfaction and comfort."</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+          <div class="col-md-6 offset-md-3">
+              {% if messages %}
+                  {% for message in messages %}
+                      {% if message.tags == 'success' %}
+                          <div class="alert alert-{{ message.tags }} alert-dismissible" role="alert">
+                              {{ message }}
+                              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                          </div>
+                      {% endif %}
+                  {% endfor %}
+              {% endif %}
+  
+              <form class="px-4 flex-column" method="POST">
+                  {% csrf_token %}
+                  <div class="form-group">
+                      <label for="id_name" class="fw-medium">Name:</label>
+                      <input type="text" class="form-control rounded-pill p-3" id="id_name" name="name" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="id_email" class="fw-medium">Email:</label>
+                      <input type="email" class="form-control rounded-pill p-3" id="id_email" name="email" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="id_message" class="fw-medium">Message:</label>
+                      <textarea class="form-control rounded-4" id="id_message" name="message" rows="5" cols="5" required></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary rounded-pill w-50 p-2 m-4">Submit</button>
+              </form>
+          </div>
+      </div>
+  </div>
+  
+
+{% endblock %}
+

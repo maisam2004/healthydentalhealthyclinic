@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block cortitle %}general{% endblock %}
+
+{% block page%}general{% endblock %}
+{% block content %}
+
+<section id="general-dentistry" class=" bg-primary-subtle">
+    <div class="container pt-5">
+      <div class="row bg-light mb-2 p-4 rounded-4">
+      <h1>General Dentistry: Comprehensive Oral Care</h1>
+      <p class="intro">General Dentistry: Comprehensive Oral Care
+        At Healthy Dental Clinic, our General Dentistry services cover a wide spectrum of oral health needs. Whether you’re due for a routine checkup or require treatment, our skilled team is here to ensure your smile stays healthy and vibrant</p>
+      </div >
+      <div class="row align-items-center mb-2 rounded-4"> 
+        <div class="col-md-6 order-md-2"> 
+          <img src="{% static 'exam_dent3.jpg' %}" alt="Dentist Examining Patient" class="img-fluid rounded"> 
+        </div>
+        <div class="col-md-6 order-md-1">
+          <h2>What Is General Dentistry?</h2>
+          <p class="fs-5">General Dentistry serves as the foundation of oral care. Our general dentists are your primary dental care providers, offering services to patients of all ages.Here’s what we focus on:</p>
+        </div> 
+      </div>
+  
+      <div class="row align-items-center bg-light rounded-4"> 
+        <div class="col-md-6"> 
+          <img src="{% static 'dental_cleaning.jpg' %}" alt="Dental Cleaning" class="img-fluid rounded">
+        </div>
+        <div class="col-md-6 d-none d-md-block"> 
+          <h2 style="color:rgba(0, 109, 159, 1);">Preventive Care:</h2>
+          <ul>
+            <li>Regular dental exams and professional teeth cleanings.</li>
+            <li>X-rays to detect hidden issues.</li>
+            <li>Education on proper oral hygiene practices</li>
+            </ul>
+
+            <h2>Basic Dental Services: </h2>
+            <ul>
+              <li>Addressing gum disease (gingivitis).</li>
+              <li>Oral cancer screenings..</li>
+              <li>Fluoride treatments.</li>
+              <li>Sealants to protect teeth.</li>
+              </ul>
+
+        </div>
+        <div class="accordion accordion-flush col-md-6 d-md-none my-4" id="accordionFlushExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="true" aria-controls="flush-collapseOne">
+              Preventive Care:
+              </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushExample" style="">
+              <div class="accordion-body"><ul>
+              <li>Regular dental exams and professional teeth cleanings.</li>
+              <li>X-rays to detect hidden issues.</li>
+              <li>Education on proper oral hygiene practices</li>
+              </ul></div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+              Basic Dental Services:
+              </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample" style="">
+              <div class="accordion-body"><ul>
+              <li>Addressing gum disease (gingivitis).</li>
+              <li>Oral cancer screenings..</li>
+              <li>Fluoride treatments.</li>
+              <li>Sealants to protect teeth.</li>
+              </ul></div>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+
+
+      
+
+      <div class="row align-items-center py-5 px-2"> 
+       
+        <div class="col-md-12 order-md-1 text-center">
+          <h2 class="">When Should You See a General Dentist?</h2>
+          <p class=" fw-medium fs-5"><span class="text-info-emphasis fw-semibold">Twice a Year</span>:<br> Schedule visits every six months for optimal care.
+            Significant Changes: If you experience any oral discomfort or notice changes, seek an appointment promptly.</p>
+            <a href="{% url 'book_appointment' %}" class="btn text-center rounded-pill ">Book Appointment</a>
+            
+
+            <p class="fw-medium pt-2">*Schedule Your Consultation<br>
+              <span class="fs-5">Don't let dental issues hold you back from smiling with confidence.</span> </p>
+
+        </div> 
+      </div>
+
+
+      <div class="container-fluid align-items-center  p-2  rounded-4">
+        <h2>Our Fees</h2>
+        <table class="fee-table table table-striped table-secondary-subtle">
+          <thead>
+              <tr>
+                  <th scope="col">Service</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Price</th>
+              </tr>
+          </thead>
+          <tbody>
+              {% for fee in general_fees %}
+              <tr>
+                  <td>{{ fee.service }}</td>
+                  <td>{{ fee.description }}</td>
+                  <td>${{ fee.amount }}</td>
+              </tr>
+              {% endfor %}
+          </tbody>
+      </table>
+        <p class="discount-note text-danger">
+          Join us and enjoy a 20% discount on fees!<br>
+          <span class="text-dark ">call now : 020365558489</span>
+        </p>
+      </div>
+
+      
+  
+      </div>
+  </section>
+
+  
+
+  
+
+{% endblock %}

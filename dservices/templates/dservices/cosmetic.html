@@ -1,0 +1,171 @@
+{% extends "base.html" %}
+{% load static %}
+{% block cortitle %}cosmetic{% endblock %}
+{% block page%}cosmetic{% endblock %}
+{% block content %}
+
+<section id="general-dentistry" class=" bg-primary-subtle">
+    <div class="container pt-5">
+      <div class="row bg-light mb-2 p-4 rounded-4">
+      <h1>Cosmetic Dentistry: Enhancing Your Smile</h1>
+      <p class="intro">At Healthy Dental Clinic, we understand the impact of a captivating smile. Our Cosmetic Dentistry services are designed to enhance your teeth’s appearance, boost your confidence, and leave a lasting impression.</p>
+      </div >
+    
+      <div class="row align-items-center rounded-4"> 
+        <div class="col-md-6 order-md-2 mt-4"> 
+          <img src="{% static 'cosmetic_doctor.jpg' %}" alt="Dentist Examining Patient" class="img-fluid rounded"> 
+        </div>
+        <div class="col-md-6 order-md-1">
+          <h2>What Is Cosmetic Dentistry?</h2>
+          <p class="fs-5">Cosmetic Dentistry focuses on improving the aesthetics of your smile. Whether you’re looking to correct minor imperfections or transform your entire look, we offer a range of personalized treatments. Here’s what we can do for you:</p>
+        </div> 
+      </div>
+  
+      <div class="row align-items-center bg-light mt-5 rounded-4 py-5"> 
+        <div class="col-md-6"> 
+          {% comment %} <img src="{% static 'dental_cleaning.jpg' %}" alt="Dental Cleaning" class="img-fluid rounded"> {% endcomment %}
+          <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="10000">
+                <img src="{% static 'cosmetic_dent.jpeg' %}" class="d-block w-100" alt="cosmetic procedures">
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <img src="{% static 'dental_bond1.jpg' %}" class="d-block w-100" alt="dental bonding image ">
+              </div>
+              <div class="carousel-item">
+                <img src="{% static 'invisa_brace.jpeg' %}" class="d-block w-100" alt="invisalign braces">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        </div>
+        <div class="col-md-6 d-none d-md-block"> 
+          <h2 style="color:rgba(0, 109, 159, 1);">Teeth Whitening:</h2>
+          <p class="fs-5 ps-1"> Our professional whitening treatments deliver impressive results.</p>
+            <h2>Porcelain Veneers: </h2>
+            <p class="fs-5 ps-1">Custom-made thin shells that cover the front surface of your teeth, correcting chips, gaps, and unevenness.</p>
+            <h2>Dental Bonding: </h2>
+            <p class="fs-5 ps-1"> A cost-effective solution to repair minor flaws, such as small chips or gaps.</p>
+            <h2>Invisalign®:  </h2>
+            <p class="fs-5 ps-1">Straighten your teeth discreetly with clear aligners, avoiding traditional braces.</p>
+            <h2>Smile Makeovers: </h2>
+            <p class="fs-5 ps-1"> Comprehensive treatments combining various procedures to achieve your dream smile.</p>
+
+
+        </div>
+        <div class="accordion accordion-flush col-md-6 d-md-none" id="accordionFlushExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="true" aria-controls="flush-collapseOne">
+              Teeth Whitening:
+              </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushExample" style="">
+              <div class="accordion-body">Our professional whitening treatments deliver impressive results.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+              Porcelain Veneers:
+              </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample" style="">
+              <div class="accordion-body">Custom-made thin shells that cover the front surface of your teeth, correcting chips, gaps, and unevenness.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+              Invisalign®:
+              </button>
+            </h2>
+            <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">Straighten your teeth discreetly with clear aligners, avoiding traditional braces.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+            Smile Makeovers:
+            </button>
+          </h2>
+          <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Comprehensive treatments combining various procedures to achieve your dream smile.</div>
+          </div>
+        </div>
+        </div>
+        
+      </div>
+
+
+      
+
+      <div class="row align-items-center py-5 px-2"> 
+       
+        <div class="col-md-12 order-md-1 text-center">
+            
+
+
+          <h2 class="">When Cosmetic dentistry might be an option if you have?</h2>
+          <ul class="reason_cosmetic fw-medium fs-5">
+            <li><span class="text-info-emphasis fw-semibold">Chipped or cracked teeth.</span></li>
+            <li><span class="text-info-emphasis fw-semibold">Small gaps or spaces between your teeth.</span></li>
+            <li><span class="text-info-emphasis fw-semibold">Tooth discoloration and staining.</span></li>
+            <li><span class="text-info-emphasis fw-semibold">Misshapen teeth.</span></li>
+            <li><span class="text-info-emphasis fw-semibold">Misaligned teeth</span></li>
+        </ul>
+            <a href="{% url 'book_appointment' %}" class="btn text-center rounded-pill ">Book Appointment</a>
+            
+
+            <p class="reasons fw-medium pt-2 ">
+              Smile with confidence.<br>
+               Schedule a consultation with Healthy Dental Clinic today to learn more about our restorative dentistry services and discover the right solution for your smile.
+            </p>
+
+        </div> 
+      </div>
+
+
+      <div class="container-fluid align-items-center  p-2  rounded-4">
+        <h2>Our Fees</h2>
+        
+        <table class="fee-table table table-striped table-secondary-subtle">
+          <thead>
+              <tr>
+                  <th scope="col">Service</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Price</th>
+              </tr>
+          </thead>
+          <tbody>
+              {% for fee in cosmetic_fees %}
+              <tr>
+                  <td>{{ fee.service }}</td>
+                  <td>{{ fee.description }}</td>
+                  <td>${{ fee.amount }}</td>
+              </tr>
+              {% endfor %}
+          </tbody>
+      </table>
+        <p class="discount-note text-danger">
+          Join us and enjoy a 20% discount on fees!<br>
+          <span class="text-dark ">call now : 020365558489</span>
+        </p>
+      </div>
+
+      
+  
+      </div>
+  </section>
+
+  
+
+{% endblock %}

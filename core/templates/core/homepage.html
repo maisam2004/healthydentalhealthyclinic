@@ -1,0 +1,229 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extracss %} 
+
+<link rel="preload" fetchpriority="high" as="image" href="/static/office_dentist.webp" type="image/webp">
+<link rel="preload" fetchpriority="high" as="image" href="{% static 'general_den.webp' %}" type="image/webp">
+<link rel="preload" fetchpriority="high" as="image" href="{% static 'cqc_logo.webp' %}" type="image/webp">
+<link rel="preload" fetchpriority="high" as="image" href="{% static 'gdc-logo-white.png' %}" type="image">
+<link rel="preload" fetchpriority="high" as="image" href="{% static 'invisalign-logo.webp' %}" type="image/webp">
+<link rel="preload" fetchpriority="high" as="image" href="{% static 'family_dentist.webp' %}" type="image/webp">
+<link rel="preload" fetchpriority="high" as="image" href="{% static 'kids_brush.webp' %}" type="image/webp">
+<link rel="preload" fetchpriority="high" as="image" href="{% static 'why_choose_us.png' %}" type="image">
+<link rel="preload" fetchpriority="high" as="image" href="{% static 'smilyteath2.png' %}" type="image">
+<link rel="preload" fetchpriority="high" as="image" href="/static/landingpage_bg.webp" type="image/webp">
+<link rel="preload" fetchpriority="high" as="image" href="/static/main_hero.webp" type="image/webp">
+
+{% endblock %}
+
+{% block cortitle  %}
+    homepage
+    {% endblock %}
+    {% block page %} homepage {% endblock %}
+{% block content %}
+
+
+<main class="container-fluid d-flex  align-items-center position-relative">
+    <div class="container-sm text_hero align-bottom text-center order-2">
+        <h1 >Welcome to Your Dental Practice</h1>
+        
+        <h4 class="text-center mt-4">Your healthy smile starts here. <img src="{% static 'smilyteath2.png'%}" alt="smiling teach image"> </h4>
+            
+
+        
+        <a href="{% url 'book_appointment' %}" class="btn text-center rounded-pill grounded-radiants ">Book Appointment</a>
+    </div>
+    <div class="container-sm order-md-2 position-relative text-center ">
+        <img fetchpriority="high" class="hero_image rounded-5 w-75 p-2" src="{% static 'main_hero.webp' %}" alt="patient_image" >
+    </div>
+    
+   
+</main>
+<div class="container-fluid position-absolute" >
+
+    <div class="partners text-center d-flex flex-wrap justify-content-around gap-4 align-items-center">
+        <img src="{% static 'cqc_logo.webp' %}"  class="companies rounded p-1" alt="company quality" style="width: 8em;height: 12%;">
+        <img src="{% static 'bos.svg' %}"  class="companies bg-success rounded p-1" alt="company bos" style="width: 7.2em;height: 10%;">
+        <img src="{% static 'invisalign-logo.webp' %}"  class="companies rounded-2 p-1" alt="company invisilign" style="width: 8em;height: 12%;">
+        <img src="{% static 'gdc-logo-white.png' %}"  class="companies bg-dark rounded p-1" alt="company dental council" style="width: 11em;height: 12%;">
+    </div>
+    
+</div>
+
+<section class="current_offers  inner-shadow container-fluid pb-4 pt-5 mt-5 mb-3">
+
+    <h2 class="text-light fw-semibold">Current offers</h2>
+    <div class="container-md card-container p5 mt-3 d-flex flex-wrap gap-4 justify-content-center">
+        <div class="card left-card text-center position-relative rounded-4 d-inline-block" style="width: 24rem;">
+            <div class="card-body m-3">
+              <h5 class="card-title border rounded p-3 text-center rounded-pill ">New patient offer</h5>
+              <h6 class="card-subtitle mb-2 fw-bold text-warning">Private patient</h6>
+              <p class="card-text ">Exam - 
+                X-RAYS<br>
+                Gum Assessment<br>
+                & CLEANING<br>
+                <span class="text-decoration-line-through text-secondary ">Was $200</span><br>  
+                <span class="text-info fw-bold fs-5 text-price">ONLY FOR  $69</span>
+                </p>
+                
+              <a href="{% url 'book_appointment' %}" class="join_now border rounded p-2 px-3 text-center rounded-pill btn">Join Now</a>
+              
+            </div>
+          </div>
+
+          <div class="card right-card text-center position-relative rounded-4" style="width: 24rem;">
+            
+            <div class="card-body m-3">
+                <h5 class="card-title border rounded p-3 text-center rounded-pill">Special Offer</h5>
+                <h6 class="card-subtitle mb-2 fw-bold text-warning">Teeth Whitening</h6>
+                <p class="card-text">
+                  Professional Teeth Whitening Treatment<br>
+                  Includes consultation<br>
+                  + take-home kit<br>
+                  <span class="text-decoration-line-through text-secondary ">Was $500</span><br>
+                  <span class="text-info fw-bold fs-5 text-price " >Now only $199</span>
+              </p>
+              
+                <a href="{% url 'book_appointment' %}" class="join_now border rounded p-2 px-3 text-center rounded-pill btn">Book Now</a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+<section class="denteistry_services container-fluid pb-4 pt-5 mt-3 mb-3">
+    <h2 class="text-light fw-semibold mx-auto">Dentistry Services</h2>
+    <div class="container-md p5 mt-3 d-flex flex-wrap gap-5 justify-content-center">
+        <div class="card services text-center position-relative rounded-4 d-inline-block" >
+            <img src="{% static 'general_den.webp' %}" class="card-img-top " alt="general checkup">
+            <div class="card-body m-3">
+              <h5 class="card-title ">General Dentistry</h5>
+              <h6 class="card-subtitle mb-2 text-warning text-primary">Private / NHS</h6>
+              <p class="card-text ">incorporates a broad range of diseases and disorders of the oral and maxillofacial region.</p>
+              <a  href="{% url 'general' %}" class="find_out border rounded p-2 px-3 text-center rounded-pill">Find out more</a>
+              
+            </div>
+        </div>
+
+        <div class="card services text-center position-relative rounded-4 d-inline-block" >
+            <img src="{% static 'cosmetic_den.png' %}" class="card-img-top rounded-circle" alt="cosmetic image">
+            <div class="card-body m-3">
+              <h5 class="card-title ">Cosmetic Dentistry</h5>
+              <h6 class="card-subtitle mb-2 text-warning">Private patient</h6>
+              <p class="card-text ">Your smile is the first impression that others have of you, making sense that you would want it bright and healthy.</p>
+              <a href="{% url 'cosmetic' %}" class="find_out border rounded p-2 px-3 text-center rounded-pill">Find out more</a>
+              
+            </div>
+        </div>
+        <div class="card services border border-primary text-center position-relative rounded-4 d-inline-block" >
+            <img src="{% static 'restorative_den.png' %}" class="card-img-top rounded-circle" alt="restorative dental">
+            <div class="card-body m-3">
+              <h5 class="card-title ">Restorative Dentistry</h5>
+              <h6 class="card-subtitle mb-2 text-warning">Private patient</h6>
+              <p class="card-text ">We offer fillings, crowns, bridges and implants as common restorative options to bring back your smile.</p>
+              <a href="{% url 'restorative' %}" class="find_out border rounded p-2 px-3 text-center rounded-pill">Find out more</a>
+              
+            </div>
+        </div>
+
+
+    </div>
+
+</section>
+
+<section class="container-fluid p-5 mt-3 why_choose_us " id="image-section">
+    <h2 class="text-center">Why Choose Us</h2>
+    <div class="row d-flex p-2 justify-content-center">
+        <div class="col-lg-6 order-1 order-md-2 ">
+            <div class="container  list_why pt-5 ">
+                <h3 class="fw-semibold">At Healthy Dental Clinic, we offer </h3>
+                 <ul>
+                    <li class="fade-in-image">Quality Family, Cosmetic & More Dentistry</li>
+                    <li class="fade-in-image">Relaxed Atmosphere & Patient-Centered Care</li>
+                    <li class="fade-in-image">Advanced Technology & Emergency Services</li>
+                    <li class="fade-in-image">Flexible Payment Options & Transparent Pricing</li>
+                    <li class="fade-in-image">Regulated by the Dental Council</li> 
+                    <li class="fade-in-image">Associate with Invisalign Company</li>
+                </ul>
+                <p class="fw-semibold text-light">Let us help you transform your smile!</p>
+            </div>
+        </div>
+        <div class="col-lg-4 order-sm-1 d-flex order-md-2 justify-content-center">
+
+                <img src="{% static 'why_choose_us.png' %}"  class="why_image fade-in-image" alt="image of smiling lady">
+        </div>
+    </div>
+</section>
+
+
+<div class="container-fluid p-5 mt-1 family_images position-relative text-center" id="imageSwapContainer">
+    <div class="row d-flex">
+        <div class="col-md-6 order-1">
+            <div class="container">
+                <img src="{% static 'family_dentist.webp' %}"  class="family_img fade-in-image" alt="family with dentist" id="familyImg">
+            </div>
+        </div>
+        <div class="col-md-6 order-2   position-absolute ">
+            <div class="container d-flex justify-content-center ">
+                
+                <img src="{% static 'kids_brush.webp' %}"  class="kid_img fade-in-image" alt="kid brushing" id="kidImg" >
+            </div>
+        </div>
+        
+    </div>
+   
+</div>
+
+<section class="reviews container-fluid pb-4 pt-5 mt-3 mb-3  d-flex flex-wrap ">
+    <div class="d-flex flex-column "><h2 class="text-center">What our patient say </h2>
+    <p class=" text-center"> <a href="{% url 'reviews' %}"  class="text-center text-warning fs-4 " target="_blank" >more reviews <i class="fa-solid fa-arrow-right"></i></a> </p></div>
+    <div class="container-md p5 mt-3 d-flex flex-wrap gap-5 justify-content-center  ">
+        <div class="card review-card border border-primary text-center position-relative rounded-4 d-inline-block" style="width:18rem;">
+            
+            <div class="card-body m-3">
+              <h5 class="card-title ">Paul Lynch</h5>
+              <p class="card-subtitle mb-2 text-body-secondary"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></p>
+              <p class="card-text ">the team were amazing! My filling was painless and my teeth have never looked whiter. I'm so happy with the results and can't recommend this practice enough!.</p>
+              
+              
+            </div>
+        </div>
+
+        <div class="card review-card border border-primary text-center position-relative rounded-4 d-inline-block" style="width:18rem;">
+            
+            <div class="card-body m-3">
+              <h5 class="card-title ">Toomie Lee</h5>
+              <p class="card-subtitle mb-2 text-body-secondary"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></p>
+              <p class="card-text ">First I was nervous , but Dr. David Lee made the entire process so easy and comfortable. My new implant looks and feels natural – my  confidence back!</p>
+              
+            </div>
+        </div>
+        <div class="card review-card text-center border border-primary position-relative rounded-4 d-inline-block" style="width:18rem;">
+            
+            <div class="card-body m-3">
+              <h5 class="card-title ">Graham Clark</h5>
+              <p class="card-subtitle mb-2 text-body-secondary"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></p>
+              <p class="card-text ">I was so impressed with the dental store! They had a great selection of products and the website was easy to navigate.  The staff was  helpful when I had questions . My order arrived quickly !</p>
+              
+              
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+

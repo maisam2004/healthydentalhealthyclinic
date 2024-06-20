@@ -1,0 +1,42 @@
+<!-- dservices/templates/dservices/general_services.html -->
+{% extends 'base.html' %}
+{% block cortitle %}fee page{% endblock %}
+{% block page %}fee_page{% endblock %}
+{% block content %}
+
+<div class="container mt-5"> 
+    <h2>All Fees</h2>
+
+    <div class="alert alert-info text-center" role="alert">  
+        <p class="mb-0">
+            Here is a list of our services and their associated fees. 
+            <br>
+            Please note that additional charges may apply for certain procedures. 
+        </p>
+    </div>
+
+    {% if fees %}
+        <table class="table table-striped table-secondary">
+            <thead>
+                <tr>
+                    <th>Service</th>
+                    <th class="d-none d-md-block">Description</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for fee in fees %}
+                    <tr>
+                        <td>{{ fee.service }}</td>
+                        <td class="d-none d-md-block">{{ fee.description }}</td>
+                        <td>${{ fee.amount }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No fees available.</p>
+    {% endif %}
+</div>
+
+{% endblock %}

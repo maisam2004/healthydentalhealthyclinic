@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page%}general1{% endblock %}
+{% block content %}
+
+<div class="container">
+    <div class="container-fluid">
+        <div id="carouselExampleDark" class="carousel carousel-dark slide">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="10000">
+                <img src="{% static 'kids_brush.jpg'%}" class="d-block w-75" alt="kid brushing">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Comprehensive Oral Care</h5>
+                    <p class="fs-5">Expert general dentistry services tailored to your needs. Keep your smile healthy and vibrant with our comprehensive oral care solutions.</p>
+                </div>
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <img src="{% static 'friendly_dentist.jpg'%}" class="d-block w-75" alt="friendly_dentist">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Expert Dentists, Trusted Care</h5>
+                    <p >Meet our team of skilled dentists dedicated to providing top-quality general dentistry services. Your smile is in good hands with us.</p>
+                    <p><a href="{% url 'book_appointment' %}" class="btn text-center rounded-pill">Our Staff </a>.</p>
+                </div>
+              </div>
+              <div class="carousel-item  mx-auto">
+                <img src="{% static 'healthy dental clinic 2.png'%}" class="d-block w-75" alt="our brand">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Your Partner in Oral Health</h5>
+                    <p>Why choose general dentistry? We offer a comprehensive approach, early detection, and patient education. Let us be your partner in maintaining a healthy smile.</p>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+
+    </div>
+    <div class="row mt-5 ">
+        <div class="col-md-6 p-5">
+            <h2>General Dentistry: Comprehensive Oral Care</h2>
+            <p>At Healthy Dental Clinic, our General Dentistry services cover a wide spectrum of oral health needs. Whether you’re due for a routine checkup or require treatment, our skilled team is here to ensure your smile stays healthy and vibrant.</p>
+            <h3>What Is General Dentistry?</h3>
+            <p>General Dentistry serves as the foundation of oral care. Our general dentists are your primary dental care providers, offering services to patients of all ages. Here’s what we focus on:</p>
+            <h4>Preventive Care:</h4>
+            <ul>
+                <li>Regular dental exams and professional teeth cleanings.</li>
+                <li>X-rays to detect hidden issues.</li>
+                <li>Education on proper oral hygiene practices.</li>
+            </ul>
+            <h4>Basic Dental Services:</h4>
+            <ul>
+                <li>Addressing gum disease (gingivitis).</li>
+                <li>Oral cancer screenings.</li>
+                <li>Fluoride treatments.</li>
+                <li>Sealants to protect teeth.</li>
+            </ul>
+            <h3>Why Choose General Dentistry?</h3>
+            <ul>
+                <li>Comprehensive Approach: We cover a broad range of dental needs.</li>
+                <li>Early Detection: Regular checkups help catch problems early.</li>
+                <li>Patient Education: We empower you with knowledge for better oral health.</li>
+            </ul>
+            <h3>When Should You See a General Dentist?</h3>
+            <ul>
+                <li>Twice a Year: Schedule visits every six months for optimal care.</li>
+                <li>Significant Changes: If you experience any oral discomfort or notice changes, seek an appointment promptly.</li>
+            </ul>
+            <p>Ready to prioritize your oral health? Explore our General Dentistry services and let us be your partners in maintaining a healthy smile!</p>
+        </div>
+        <div class="col-md-6 p-5">
+            <h3>Schedule Your Consultation</h3>
+            <p>Don't let dental issues hold you back from smiling with confidence. Schedule a consultation with Healthy Dental Clinic today to learn more about our restorative dentistry services and discover the right solution for your smile.</p>
+            <!-- Add a button or link to schedule a consultation -->
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
