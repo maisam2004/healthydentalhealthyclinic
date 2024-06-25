@@ -41,10 +41,10 @@
     <div  class="container-fluid top_nav_book" style="background-color: #19504d;">
         <div class="row   text-center d-flex flex-row py-1">
             <div class="hstack gap-3">
-            <div class=" p-1 ms-2 "><span><a class="text-light fw-bolder " href="tel:+12709960875" title="tel:+12709960875"><i class="fa-solid fa-phone px-1 "></i><span class="d-md-none">Call</span><span class="d-none d-md-inline-block">+12709960875</span></a></span></div>
+            <div class=" p-1 ms-2 "><span><a class="text-warning fw-bolder " href="tel:+12709960875" title="tel:+12709960875"><i class="fa-solid fa-phone px-1 "></i><span class="d-md-none">Call</span><span class="d-none d-md-inline-block">+12709960875</span></a></span></div>
             <div class="vr"></div>
-            <div class=" p-1 "><span><a class="text-light fw-bolder" href="https://www.google.co.uk/maps/place/420+Morgantown+Rd,+Bowling+Green,+KY+42101,+USA/@36.9833831,-86.4709393,17z/data=!3m1!4b1!4m6!3m5!1s0x8865e92debfa2d25:0x4ac758012dd0c5f5!8m2!3d36.9833831!4d-86.4683644!16s%2Fg%2F11bw3z5yq8?entry=ttu" target="_blank"><i class="fa-solid fa-location-dot px-1"></i>Clinic</a></span></div>
-            <div class=" p-1 ms-md-auto "><a href="{% url 'book_appointment' %}" class="btn text-light fw-bold border rounded-pill " title="book appointment">Book Now</a></div>
+            <div class=" p-1 "><span><a class="text-warning fw-bolder" href="https://www.google.co.uk/maps/place/420+Morgantown+Rd,+Bowling+Green,+KY+42101,+USA/@36.9833831,-86.4709393,17z/data=!3m1!4b1!4m6!3m5!1s0x8865e92debfa2d25:0x4ac758012dd0c5f5!8m2!3d36.9833831!4d-86.4683644!16s%2Fg%2F11bw3z5yq8?entry=ttu" target="_blank"><i class="fa-solid fa-location-dot px-1"></i>Clinic</a></span></div>
+            <div class=" p-1 ms-md-auto "><a href="{% url 'book_appointment' %}" class="btn text-warning fw-bold border rounded-pill " title="book appointment">Book Now</a></div>
             
             <div class="p1  ms-auto d-md-none ">
                 <a class="nav-link dropdown-toggle  " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -74,8 +74,8 @@
         </div>
     </div>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-md navbar-light bg-light border-bottom">
+<div class="nav_main" > <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-light ">
         <div class="container-fluid">
             <a class="navbar-brand mx-auto d-md-none" href="{% url 'home' %}">
                 <img class="mobile_logo" src="{% static 'logo1.png' %}" alt="Logo">
@@ -120,7 +120,7 @@
                     </li>
                     <li class="nav-item d-none d-md-inline-block dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="user account">
-                            <i class="fa-solid fa-user fs-6 border p-2 rounded-circle {% if request.user.is_authenticated %}text-danger{% else %}text-dark{% endif %}"></i>
+                            <i class="fa-solid fa-user fs-6 border p-2 rounded-circle {% if request.user.is_authenticated %}text-danger{% else %}text-light{% endif %}"></i>
 
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">

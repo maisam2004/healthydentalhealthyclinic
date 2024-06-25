@@ -102,7 +102,6 @@
   /* Setting up a box to add the inner shadow to */
   
   body {
-    
     background-image: linear-gradient(135deg, #6edcd9, #7e7e81);
   
     font-family: "Manrope", sans-serif;
@@ -198,9 +197,47 @@
     color: black !important;
   }
   
+.nav-link{
+ /*  border-image-source: linear-gradient(rgba(7, 48, 63, 0.334),rgba(2, 2, 84, 0.482)); 
+  border-image-source: linear-gradient(rgba(14, 26, 30, 0.75),rgba(8, 30, 20, 0.482));
+
+      border-image-slice: fill 1 ;
+      background-color: transparent !important;
+*/
+color:white !important;
+}
+
+.nav-link .account {
+  color:white !important;
+}
+.nav_main{
+  border-image-source: linear-gradient(#19504d, rgba(8, 30, 20, 0.482));
+
+      border-image-slice: fill 1 ;
+      background-color: transparent !important;
+background-image: url("/static/office_dentist.webp");
+}
+
+
+
   .text_hero {
+    
     line-height: 7em !important;
+    
+   
+
+
   }
+
+
+
+
+
+
+
+
+
+
   main h1 {
     color: #153e49;
     font-weight: 900;
@@ -1737,6 +1774,8 @@
   
       background-size: cover;
       background-position: center;
+
+      
     }
   
     main h1 {
@@ -1975,7 +2014,7 @@
     main {
       height: 38em;
       background-repeat: no-repeat;
-      background-image: url("/static/office_dentist.webp"); 
+      /*background-image: url("/static/office_dentist.webp"); */
   
       background-size: cover;
       background-position: center;
