@@ -197,7 +197,7 @@
     color: black !important;
   }
   
-.nav-link{
+.homepage .nav-link{
  /*  border-image-source: linear-gradient(rgba(7, 48, 63, 0.334),rgba(2, 2, 84, 0.482)); 
   border-image-source: linear-gradient(rgba(14, 26, 30, 0.75),rgba(8, 30, 20, 0.482));
 
@@ -207,17 +207,22 @@
 color:white !important;
 }
 
-.nav-link .account {
+.homepage .nav-link  {
   color:white !important;
 }
-.nav_main{
+.homepage .nav_main{
   border-image-source: linear-gradient(#19504d, rgba(8, 30, 20, 0.482));
 
       border-image-slice: fill 1 ;
       background-color: transparent !important;
 background-image: url("/static/office_dentist.webp");
 }
-
+nav{
+  background-color: whitesmoke;
+}
+.homepage nav{
+  background-color: unset;
+}
 
 
   .text_hero {
@@ -2080,7 +2085,7 @@ background-image: url("/static/office_dentist.webp");
       margin-left: 0.3em;
       margin-right: 1.3em;
       /* font-weight: 800; */
-      font-size: unset;
+      font-size: 20px !important;
     }
   
     .profile .profile_update_form input {
@@ -2199,7 +2204,7 @@ background-image: url("/static/office_dentist.webp");
   
   @media screen and (min-width: 1400px) {
     .navbar-nav .nav-link {
-      font-size: large !important;
+      font-size: medium !important;
     }
     .hstack span a:hover {
       border-bottom: 1px solid white;
