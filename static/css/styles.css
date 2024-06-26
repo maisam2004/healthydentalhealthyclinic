@@ -207,7 +207,7 @@
 color:white !important;
 }
 
-.homepage .nav-link  {
+.nav-link  {
   color:white !important;
 }
 .homepage .nav_main{
@@ -218,7 +218,9 @@ color:white !important;
 background-image: url("/static/office_dentist.webp");
 }
 nav{
-  background-color: whitesmoke;
+  border-image-source: linear-gradient(#19504d, rgba(8, 30, 20, 0.482));
+
+      border-image-slice: fill 1 ;
 }
 .homepage nav{
   background-color: unset;
