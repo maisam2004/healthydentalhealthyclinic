@@ -2085,7 +2085,7 @@ nav{
       margin-left: 0.3em;
       margin-right: 1.3em;
       /* font-weight: 800; */
-      font-size: 20px !important;
+      font-size: medium !important;
     }
   
     .profile .profile_update_form input {
