@@ -75,7 +75,7 @@
     </div>
 
 <div class="nav_main" > <!-- Navbar -->
-    <nav class="navbar navbar-expand-md navbar-light ">
+    <nav class="navbar navbar-expand-md navbar-light " id="navbar">
         <div class="container-fluid">
             <a class="navbar-brand mx-auto d-md-none" href="{% url 'home' %}">
                 <img class="mobile_logo" src="{% static 'logo1.png' %}" alt="Logo">
@@ -443,6 +443,20 @@
                 }, index * 360); // Delay each image's animation by 300ms
             });
         });
+
+
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            const threshold = 100; // Number of pixels to scroll before changing background
+          
+            if (window.scrollY > threshold) {
+              navbar.classList.add('sticky');
+            } else {
+              navbar.classList.remove('sticky');
+            }
+          });
+          
+
         {% endif %}
 
  

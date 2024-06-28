@@ -211,19 +211,40 @@ color:white !important;
   color:white !important;
 }
 .homepage .nav_main{
-  border-image-source: linear-gradient(#19504d, rgba(8, 30, 20, 0.482));
-
+  /*border-image-source: linear-gradient(#19504d, rgba(8, 30, 20, 0.482));*/
+  
+  border-image-source: linear-gradient(#19504d, rgba(30, 114, 100, 0.482));
+  
       border-image-slice: fill 1 ;
       background-color: transparent !important;
 background-image: url("/static/office_dentist.webp");
 }
 nav{
-  border-image-source: linear-gradient(#19504d, rgba(8, 30, 20, 0.482));
+  border-image-source: linear-gradient(#19504d, rgba(8, 30, 20, 0.688));
 
       border-image-slice: fill 1 ;
 }
 .homepage nav{
-  background-color: unset;
+  border-image-source: linear-gradient(#19504d00, rgba(8, 30, 20, 0));
+
+  border-image-slice: fill 1 ;
+}
+
+.homepage nav {
+  position: sticky;
+  z-index: 100;
+  
+  top: 0;
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.homepage nav.sticky {
+  background-color: rgba(2, 76, 76, 0.968); /* Example: Semi-transparent white background */
+}
+
+
+.homepage nav.sticky .desktop_logo {
+  width: 10em; /* Make the logo 20% smaller when sticky */
 }
 
 
@@ -246,7 +267,7 @@ nav{
 
 
   main h1 {
-    color: #153e49;
+    color: #78cce9;
     font-weight: 900;
   }
   main h4 {
@@ -1383,7 +1404,7 @@ nav{
     .container-fluid:has(.partners) {
       background-color: white;
       padding: 1em;
-      margin-top: 3em;
+      margin-top: 0em;
     }
   
     .about .container {
@@ -2183,7 +2204,7 @@ nav{
   }
   @media screen and (min-width: 1000px) and (max-width: 1400px) {
     .services {
-      width: 42%;
+      width: 35%;
     }
   
     .footer .container-md {
