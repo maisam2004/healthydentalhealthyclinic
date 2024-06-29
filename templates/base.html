@@ -74,7 +74,7 @@
         </div>
     </div>
 
-<div class="nav_main" > <!-- Navbar -->
+<div class="nav_main"  > <!-- Navbar -->
     <nav class="navbar navbar-expand-md navbar-light " id="navbar">
         <div class="container-fluid">
             <a class="navbar-brand mx-auto d-md-none" href="{% url 'home' %}">
@@ -84,7 +84,9 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
+                <ul class="navbar-nav mx-auto" 
+                style="border-bottom: 2px #c8c2c238 solid;"
+            >
                     <li class="nav-item d-none">
                         <a class="navbar-brand mx-auto" href="#">
                             <img src="{% static 'tooth_logo1.png' %}" alt="Logo">
