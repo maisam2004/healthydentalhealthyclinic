@@ -1,0 +1,2289 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+
+  .signup,
+  .basket,
+  .login,
+  .verification,
+  .add_review {
+    /* to keep footer at bottom"; */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .signup .position-fixed {
+    top: 10.5em !important;
+  }
+  .signup .footer,
+  .basket .footer,
+  .login .footer,
+  .verification .footer,
+  .add_review .footer {
+    margin-top: auto;
+  }
+  .header-container {
+    margin-top: 3em !important;
+  }
+  
+  .order_placement .container {
+    margin-top: 3em;
+    width: 99%;
+    background-color: rgba(245, 243, 243, 0.984);
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.695);
+    border-radius: 1em;
+  }
+  .order-confirmation-wrapper {
+    background-color: white;
+    padding: 1em;
+  }
+  
+  /* ADD REVEIW --*/
+  
+  .add_review form textarea {
+    border-radius: 1.5em;
+    height: 6.6em;
+  }
+  
+  .add_review form {
+    border-radius: 1.5em;
+  }
+  
+  .edit_review form textarea {
+    border-radius: 1.5em;
+    height: 6.6em;
+  }
+  
+  .review_page .whole_reviews img {
+    margin: 0 auto;
+  }
+  
+  .review_page .whole_reviews .card {
+    width: 18em;
+    height: 24em;
+    max-height: 30em;
+  }
+  
+  /* nav parts */
+  .top_nav_book .row .p1 span a:hover {
+    border-bottom: 1px white;
+  }
+  
+  .hstack .p-1 {
+    padding: 0.2rem !important;
+  }
+  .hstack a:hover i {
+    color: red;
+  }
+  
+  form input {
+    padding: 0.7em !important;
+    border-radius: 2em !important;
+    border: 1px solid rgba(128, 128, 128, 0.674) !important;
+  }
+  .review_page form input {
+    padding: 0.4em !important;
+  }
+  
+  .center form {
+    /* form in delete confirm page */
+    width: 50%;
+  }
+  
+  form button {
+    padding: 0.6em !important;
+    border-radius: 2em !important;
+    border: 1px solid rgba(128, 128, 128, 0.674) !important;
+  }
+  
+  /* Setting up a box to add the inner shadow to */
+  
+  body {
+    background-image: linear-gradient(135deg, #6edcd9, #7e7e81);
+  
+    font-family: "Manrope", sans-serif;
+    overflow-x: hidden;
+  
+    ms-high-contrast-adjust: none;
+  }
+  
+  section h1 {
+    color: rgba(0, 109, 159, 1);
+  }
+  section h2:not(:first-of-type) {
+    color: rgba(0, 109, 159, 1);
+  }
+  
+  span a {
+    text-decoration: none;
+  }
+  
+  .navbar-nav .nav-link {
+    line-height: 1.3em; /* Match the line-height with the navbar height */
+    margin-left: 0.3em;
+    /* margin-right: 1.3em; */
+  
+    font-weight: 600;
+    font-size: smaller;
+  }
+  .navbar-nav .nav-link:hover {
+    
+    font-weight: 600;
+    color: red !important;
+  }
+  
+  .navbar-nav .desktop_logo:hover {
+    
+    font-weight: 900;
+    transform: scale(1.135);
+  }
+  
+  .dental_store_nav {
+    color: #10103e;
+    text-shadow: 1px 1px 5px rgba(50, 50, 150, 0.571);
+  }
+  
+  .desktop_logo {
+    width: 12.5em;
+   
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .z-3 span {
+    background-color: blue;
+    color: white;
+    padding: 0.5rem;
+    text-decoration-line: none;
+  }
+  .z-3 span a {
+    text-decoration-line: none;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .badge {
+    --bs-badge-font-weight: 900;
+  }
+  
+  .nav-link.dropdown-toggle.show-active {
+    border-bottom: 2px dotted rgb(222, 103, 6); /* Or your desired style */
+  }
+  
+  .nav-item:has(> .nav-link.active),
+  .list-group-item:has(> .list-group-item.active) {
+    border-bottom: 2px dotted rgb(240, 114, 11); /* Or list that has active link border style */
+  }
+  .footer .list-group-item:has(> .list-group-item.active) {
+    background-color: #17a2b8 !important;
+    width: 50%;
+  }
+  .list-inline-item:has(> .nav-link.active) {
+    border-bottom: 2px dotted rgb(255, 136, 0);
+  }
+  .nav-item.dropdown:has(.dropdown-menu .dropdown-item.active) {
+    border-bottom: 2px dotted rgb(255, 85, 0);
+  }
+  
+  /* end nav style ------------------ */
+  
+  .selected_category {
+    background-color: #cfc90a !important;
+    color: black !important;
+  }
+  
+.homepage .nav-link{
+ /*  border-image-source: linear-gradient(rgba(7, 48, 63, 0.334),rgba(2, 2, 84, 0.482)); 
+  border-image-source: linear-gradient(rgba(14, 26, 30, 0.75),rgba(8, 30, 20, 0.482));
+
+      border-image-slice: fill 1 ;
+      background-color: transparent !important;
+*/
+color:white !important;
+}
+
+.nav-link  {
+  color:white !important;
+}
+.homepage .nav_main{
+  /*border-image-source: linear-gradient(#19504d, rgba(8, 30, 20, 0.482));*/
+  
+  border-image-source: linear-gradient(#19504d, rgba(30, 114, 100, 0.482));
+  
+      border-image-slice: fill 1 ;
+      background-color: transparent !important;
+background-image: url("/static/office_dentist.webp");
+}
+nav{
+  border-image-source: linear-gradient(#19504d, rgba(8, 30, 20, 0.688));
+
+      border-image-slice: fill 1 ;
+}
+.homepage nav{
+  border-image-source: linear-gradient(#19504d00, rgba(8, 30, 20, 0));
+
+  border-image-slice: fill 1 ;
+}
+
+.homepage nav {
+  position: sticky;
+  z-index: 100;
+  
+  top: 0;
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.homepage nav.sticky {
+  background-color: rgba(2, 76, 76, 0.968); /* Example: Semi-transparent white background */
+}
+
+
+.homepage nav.sticky .desktop_logo {
+  width: 10em; /* Make the logo 20% smaller when sticky */
+}
+
+
+  .text_hero {
+    
+    line-height: 7em !important;
+    
+   
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+  main h1 {
+    color: #78cce9;
+    font-weight: 900;
+  }
+  main h4 {
+    font-size: 2.3em;
+    color: #ffffff;
+    font-weight: bold;
+    text-shadow: 3px 2px 3px rgba(53, 43, 11, 0.504);
+    text-shadow: 3px 2px 3px rgb(53 70 64 / 89%);
+  }
+  
+  .homepage a.btn {
+    background-color: rgb(18, 88, 113);
+    color: white;
+    /* padding: 10px 20px; */
+    font-weight: 700;
+  }
+  .cosmetic a.btn,
+  .general a.btn,
+  .restoractive a.btn {
+    /*differnet pages same button */
+    background-color: rgb(18, 88, 113);
+    color: white;
+    padding: 10px 20px;
+    font-weight: 700;
+  }
+  .cosmetic a.btn:hover,
+  .general a.btn:hover,
+  .restoractive a.btn:hover {
+    background-color: #c8ccd0; /* Example color - adjust as needed */
+    color: rgb(18, 88, 113);
+    font-weight: 600;
+    transition: all 0.5s;
+  }
+  .grounded-radiants {
+    position: relative;
+    border: 4px solid transparent;
+    border-radius: 16px;
+    
+    background: rgb(18, 88, 113);
+    background-clip: padding-box;
+    padding: 10px;
+    
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.467);
+  }
+  
+  .grounded-radiants::after {
+    position: absolute;
+    top: -4px;
+    bottom: -4px;
+    left: -4px;
+    right: -4px;
+    background: linear-gradient(
+      119.03deg,
+      rgb(29, 136, 185) 34.89%,
+      rgb(187, 74, 216) 93.87%
+    );
+  
+    content: "";
+    z-index: -1;
+    border-radius: 28px;
+  }
+  
+  .grounded-radiants:hover {
+    box-shadow: 0 0px 3px rgba(0, 0, 0, 0.467);
+  }
+  
+  .grounded-radiants:hover::after {
+    transition: all 0.5s;
+    background: linear-gradient(
+      119.03deg,
+      rgb(93, 88, 97) 34.89%,
+      rgb(176, 171, 156) 93.87%
+    );
+  }
+  
+  .homepage a.btn:hover {
+    background-color: #c8ccd0; /* Example color - adjust as needed */
+    color: rgb(235, 235, 235);
+    font-weight: 600;
+    transition: all 0.5s;
+  }
+  .homepage .card .card-title {
+    font-size: 2em;
+  }
+  
+  /* current offers  */
+  
+  .current_offers {
+    
+  
+    margin: 4rem auto;
+  
+    padding: 1rem;
+    text-align: center;
+  }
+  .current_offers h2 {
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.576);
+  }
+  
+  /* styles.css */
+  .card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+ 
+  
+  @keyframes slideFromLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    50% {
+      transform: translateX(50%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideFromRight {
+    0% {
+      transform: translateX(100%);
+    }
+    50% {
+      transform: translateX(50%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  .left-card {
+    animation: slideFromLeft 2s ease-in-out;
+  }
+  .left-card:hover,
+  .right-card:hover {
+    transform: scale(1.025);
+  }
+  
+  .left-card button:hover,
+  .right-card button:hover {
+    background-color: #c4d7dab7;
+  }
+  .right-card {
+    animation: slideFromRight 2s ease-in-out;
+  }
+  
+  /* Drop shadow combined with a inset inner shadow, P.S. this can be used to make beautiful 3D buttons */
+  
+  
+  .current_offers .card {
+    background: linear-gradient(119.03deg, #304a7f 34.89%, #731569 93.87%);
+    color: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  .current_offers .card .text-price {
+    text-shadow: 1px 1px 3px rgba(45, 8, 8, 0.896);
+  }
+  
+  .card .join_now {
+    font-weight: 700;
+    background-color: rgb(38, 94, 115);
+    text-decoration: none;
+    color: white;
+  }
+  
+
+  
+  /* services ..............*/
+  .denteistry_services h2 {
+    text-shadow: 1px 1px 5px black;
+    text-align: center;
+    padding-bottom: 0.6em;
+  }
+  
+  .services {
+    width: 30%;
+  }
+  
+  .card-img-top {
+    width: 188px;
+    height: 160px;
+  }
+
+  
+  .denteistry_services .card {
+    padding: 0.2em;
+    border-radius: 3em !important;
+    background-color: rgb(30, 88, 100);
+    color: azure;
+    padding-left: 0.1em !important;
+    padding-right: 0.1em !important;
+    line-height: 1.8em;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  
+  .denteistry_services .card-title {
+    font-size: 1.4em;
+  }
+  .denteistry_services .find_out {
+    background-color: aliceblue;
+    color: rgb(21, 70, 80);
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 1px 1px 6px;
+  }
+  .denteistry_services .find_out:hover {
+    background-color: rgb(21, 70, 80);
+    color: aliceblue;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: none;
+    transition: opacity 0.7s ease;
+  }
+  
+  /* why choose us */
+  .why_choose_us h2 {
+    font-weight: 700;
+    text-shadow: 1px 1px 5px black;
+    color: white;
+  }
+  .list_why {
+    line-height: 3.8em;
+    padding-left: 2em;
+    font-weight: 600;
+    font-size: large;
+  }
+  .why_image {
+    width: 386px;
+  }
+  
+  .kid_img,
+  .family_img {
+    border-radius: 3em;
+    width: 470px;
+    height: 260px;
+  }
+  
+  /* effect on list in why choose us part  */
+  .fade-in {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .fade-in.visible {
+    opacity: 1;
+  }
+  
+  .why_choose_us li {
+    color: #444444;
+    padding-left: 16px;
+    margin-top: 24px;
+    position: relative;
+    font-size: 20px;
+    line-height: 20px;
+    list-style-type: none;
+    box-shadow: 1px 1px 3px rgb(184, 246, 103);
+    border-top-right-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
+    padding-bottom: 0.4em;
+    padding-top: 0.3em;
+    background-color: #c6f6d4c4;
+  }
+  .why_choose_us li:before {
+    content: "✅";
+    margin-top: 0.5em;
+    text-align: center;
+    font-size: 1.6em;
+    display: block;
+    height: 42px;
+    width: 42px;
+    
+    position: absolute; /* //  yeah, you have to manually position it based on the text size, line height, etc. (in the parent li style). it's not the smarest solution */
+    top: -12px;
+    left: -46px;
+  }
+  
+  ul.alternating-colors li:nth-child(1):before {
+    border: #0bad02;
+  }
+  ul.alternating-colors li:nth-child(2):before {
+    border: #2378d5;
+  }
+  
+  /* reviews -----homepage--- */
+  .reviews {
+    display: flex;
+    justify-content: center;
+  }
+  .reviews h2 {
+    color: white;
+    text-shadow: 1px 1px 4px black;
+    padding-bottom: 1em;
+  }
+  
+  .review-card {
+    opacity: 0; /* Initial low opacity */
+    transition: opacity 3s ease; /* Smooth transition */
+  }
+  
+  .reviews .text-warning i {
+    transition: transform 0.3s ease-in-out; /* Add a smooth transition for transform */
+  }
+  
+  .reviews .text-warning:hover i {
+    transform: translateX(5px); /* Move the icon 5px to the right on hover */
+  }
+  
+  .card-subtitle i {
+    color: rgb(236, 236, 12);
+    background-color: rgb(15, 184, 58);
+    padding: 0.4em;
+    margin-left: 2px;
+  }
+  
+ 
+  
+  .footer {
+   
+  
+    background-color: rgb(25 80 77);
+    max-width: 100%;
+    /* height: 40em; */
+    overflow: hidden;
+  }
+  
+  .footer .card-img-top {
+    width: 188px;
+    height: 140px;
+  }
+  
+  .footer_logo {
+    display: none;
+    position: absolute;
+    left: 35%;
+    top: 10%;
+  }
+  
+  .footer .card {
+    font-weight: 500;
+  
+    color: white;
+  
+    background-color: rgba(0, 0, 255, 0);
+    --bs-card-border-width: 0 !important;
+  
+    background-color: rgba(94, 94, 166, 0) !important;
+    border: 0 !important;
+  }
+  .footer .list-group-item {
+    background-color: rgba(0, 0, 0, 0) !important;
+    color: white;
+    border: none;
+    padding-top: 0;
+    padding: 0.2em;
+  }
+  
+ 
+  .footer .address {
+    border-bottom: 1px solid white !important;
+  }
+  .footer .social {
+    display: flex;
+    font-size: x-large;
+    color: #cecece;
+  }
+  .footer .social i {
+    padding-left: 0.4em;
+    padding-right: 0.4em;
+  }
+  
+  .footer .card-header {
+    font-weight: 800;
+    font-size: larger;
+  }
+  
+  footer {
+    background-color: rgb(21, 57, 64);
+    width: 100%;
+    justify-content: space-evenly;
+    gap: 1em;
+  }
+  footer img {
+    aspect-ratio: 1/3;
+    width: 12em;
+    height: 4.6em;
+  }
+  
+  .footer .first_card a {
+    text-decoration: none;
+    color: white;
+  }
+  .footer .first_card a:hover {
+    text-decoration: none;
+    color: rgb(134, 211, 210);
+  }
+  
+  /* contact page  ============*/
+  .contact h1 {
+    color: #706d6a;
+  }
+  
+  .contact p {
+    color: #443c3c;
+  }
+  
+  form {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+  .contact-page .container p {
+    background-color: rgba(227, 233, 233, 0.3);
+    padding: 1em;
+    border-radius: 0.6em;
+  }
+  
+  /* profile ___________________________ */
+  
+  .profile form input,
+  .profile form select {
+    border-radius: 2em !important;
+    border: 1px solid rgba(0, 0, 0, 0.34);
+    background-color: #dde4eb9b;
+    padding: 0.7em !important;
+  }
+  .profile form button {
+    background-color: #0d6efd;
+    color: white;
+    border-radius: 1.5em !important;
+    width: 65%;
+    margin: 0 auto;
+  }
+  .profile form button:hover {
+    background-color: #ccccd4;
+  }
+  .profile .profile_update_form .input-group {
+    display: none;
+  }
+  
+  .profile .image_profile_size {
+    border: 2px solid#78868842;
+    width: 18%;
+    aspect-ratio: 1 / 1;
+  }
+  
+  .login form {
+    flex-direction: column;
+  }
+  .login .allauth-form-inner-content {
+    background-color: white;
+    padding: 0.5em;
+    border-radius: 1em;
+    box-shadow: 1px 1px 6px rgba(53, 53, 53, 0.678);
+  }
+  .login .container {
+    width: 96%;
+  }
+  
+  .login .row {
+    justify-content: center;
+  }
+  .logout .row {
+    justify-content: center;
+  }
+  .logout .allauth-form-inner-content {
+    background-color: white;
+    margin: 1em;
+    padding: 1em;
+    box-shadow: 1px 1px 6px black;
+    border-radius: 1em;
+  }
+  
+  .signup .container {
+    width: 96%;
+  }
+  
+  .signup .row,
+  .password_reset .row {
+    justify-content: center;
+  }
+  
+  .password_reset .allauth-form-inner-content {
+    background-color: white;
+    padding: 0.5em;
+    border-radius: 1em;
+    box-shadow: 1px 1px 6px rgba(53, 53, 53, 0.678);
+  }
+  
+  .verification .row {
+    justify-content: center;
+  }
+  
+  .verification .allauth-form-inner-content {
+    background-color: white;
+    padding: 2em;
+    border-radius: 1em;
+    box-shadow: 1px 1px 6px rgba(53, 53, 53, 0.678);
+  }
+  .verification h2 {
+    text-align: center;
+  }
+  
+  .pay form {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+  .form-group label {
+    padding: 0.4em;
+  }
+  /* products page ---------- */
+  .products form {
+    flex-direction: row;
+    padding: 0.6em;
+    width: 60%;
+    border: none;
+  }
+  .products .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: #ffffff;
+    z-index: -1;
+  }
+  .products_details .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: #ffffff;
+    z-index: -1;
+  }
+  .products .dropdown-item.active {
+    /* sor by */
+    color: #fff;
+    text-decoration: none;
+    background-color: #0d6efd;
+  }
+  
+  .products .category-row {
+    background-color: #154778;
+  }
+  .products .category-row .container {
+    width: 98%;
+  
+    font-size: 0.8em;
+  }
+  .products .category-list li {
+    list-style-type: none;
+    text-decoration: none;
+  
+    border-right: 2px solid rgb(255, 255, 255);
+  }
+  .products .category-list li a {
+    text-decoration: none;
+    color: #fafafa;
+  }
+  
+  .products .search_icon {
+    font-size: larger;
+    border-radius: 50%;
+  }
+  .products .search_icon:hover {
+    color: rgb(40, 39, 39);
+    background-color: rgba(125, 125, 132, 0.479);
+  
+    border-radius: 50%;
+  }
+  .products #searchbar {
+    background-color: #f8f9fa;
+    border: 2px solid rgba(6, 70, 85, 0.546);
+    box-shadow: 0px 3px 13px 5px rgba(202, 205, 206, 0.584) inset;
+  }
+  .products form button {
+    /* padding:0.5em !important ; */
+    border-radius: 50% !important;
+  }
+  .products form {
+    padding: 0.5em !important ;
+  }
+  
+  .products .products_cards {
+    background-color: #dbe2e2af;
+  }
+ 
+  .products .products_cards li {
+    background-color: #eeeeeeb0;
+    border-top: 1px solid rgb(215, 215, 215);
+    border-bottom: 1px solid rgb(230, 230, 230);
+    list-style-type: none;
+  }
+  
+  .products .products_cards:hover {
+    transform: scale(1.03);
+  }
+  
+  .btn-outline-black {
+    background-color: white;
+    color: black !important;
+    border: 1px solid black;
+  }
+  
+  .update-link,
+  .remove-item {
+    cursor: pointer;
+  }
+  
+  /* product details */
+  
+  .products_details .card-title {
+    font-weight: bold;
+    font-size: x-large;
+  }
+  
+  .products_details .list-group li:nth-child(2) {
+    font-weight: bold;
+    font-size: large;
+  }
+  
+  .products_details .qty_input {
+    border-radius: 0.1px !important;
+    padding: 0.1em !important;
+    position: static;
+  }
+  .products_details form {
+    position: static;
+  }
+  
+  .products_details .stars-outer {
+    position: relative;
+    display: inline-block;
+    font-size: 0;
+  }
+  
+  .products_details .stars-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+  }
+  
+  .products_details .stars-inner::before {
+    content: "\2605\2605\2605\2605\2605"; /* Five empty stars */
+    color: #ddd;
+  }
+  
+  .products_details .stars-inner::after {
+    content: "\2605\2605\2605\2605\2605"; /* Five filled stars */
+    color: #f8ce0b; /* Color of filled stars */
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .products_details .input-group .btn {
+    position: unset;
+  }
+  
+  .products_details .input-group > .form-control,
+  .input-group > .form-floating,
+  .input-group > .form-select {
+    position: unset;
+  }
+  .products_details .list-group-item {
+    position: unset;
+  }
+  .products_details .footer .card {
+    position: unset;
+  }
+  card-img-top .products_details .footer .card .card-img-top {
+    position: unset;
+  }
+  
+  /* General container adjustments */
+  .container {
+    width: 80%; /* Adjust container*/
+    margin: 0 auto; /* Center the carousel horizontally */
+  }
+  
+  
+  /* Image positioning */
+  .carousel-inner .carousel-item img {
+    width: 60%; /* Image takes 60% width */
+    float: left; /* Push image to the left */
+    height: auto; /* Maintain aspect ratio */
+    /* border-radius: 20em; */
+  }
+  
+  /* Caption styling */
+  .carousel-caption {
+   
+    bottom: 20px; /* Adjust bottom position if needed */
+    background-color: rgba(
+      255,
+      255,
+      255,
+      0.8
+    ); /* White background with opacity */
+    padding: 15px; /* Add padding around the caption text */
+    border-radius: 5px; /* Optional: Rounded corners */
+  
+    width: 50%;
+    left: 45%;
+  }
+  
+  .general,
+  .cosmetic,
+  .contact {
+    background-color: var(--bs-primary-bg-subtle) !important;
+  }
+  
+  .general .fee-table {
+    width: 50%; /* Adjust table width as needed */
+    margin: 20px auto; /* Center the table */
+    border-collapse: collapse;
+  }
+  
+  .general .fee-table th,
+  .fee-table td {
+    /* border: 1px solid #373b41; */
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .general .discount-note {
+    text-align: center;
+    font-weight: 700;
+  }
+  .cosmetic,
+  .restoractive .carousel-item img {
+    /* image in crousel  */
+    aspect-ratio: 2/2;
+  }
+  .reason_cosmetic {
+    list-style-type: none;
+  }
+  .fee-table {
+    width: 50%; /* Adjust table width as needed */
+    margin: 20px auto; /* Center the table */
+    border-collapse: collapse;
+  }
+  .fee-table th,
+  .fee-table td {
+    /* border: 1px solid #373b41; */
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .discount-note {
+    text-align: center;
+    font-weight: 700;
+  }
+  
+  /* toast ----- =================*/
+  
+  .message_container {
+    position: fixed;
+    top: 1rem;
+    right: 0;
+    z-index: 1000; /* Set a high value */
+  }
+  
+  .custom-success-toast {
+    backdrop-filter: blur(30px);
+    background: linear-gradient(to right, #9470db62, #2aa4754a);
+  }
+  .custom-warning-toast,
+  .custom-info-toast {
+    backdrop-filter: blur(20px);
+    background: linear-gradient(to right, #9470db9c, #2aa475ab);
+  }
+  
+  .toast_capper {
+    height: 2px;
+  }
+  
+  
+  .bag-notification-wrapper {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  
+  /* allauth pages ------------------- */
+  
+  /* Allauth form formatting */
+  
+  .allauth-form-inner-content p {
+    margin-top: 1.5rem; /* mt-4 */
+    color: #6c757d; /* text-secondary */
+  }
+  
+  .allauth-form-inner-content input {
+    border-color: #000;
+    border-radius: 1em;
+  }
+  
+  .allauth-form-inner-content label:not([for="id_remember"]) {
+    display: none;
+  }
+  
+  .allauth-form-inner-content input::placeholder {
+    color: #aab7c4;
+  }
+  
+  .allauth-form-inner-content button,
+  .allauth-form-inner-content input[type="submit"],
+  .add_review button[type="submit"],
+  .edit_review button[type="submit"] {
+    /* btn */
+    display: inline-block;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #1d1c6e;
+    border: 1px solid #000;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0;
+  
+    /* standard bootstrap btn transitions */
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+      border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+  
+  .allauth-form-inner-content button:hover,
+  .allauth-form-inner-content input[type="submit"]:hover,
+  .add_review button[type="submit"]:hover,
+  .edit_review button[type="submit"]:hover {
+    color: #fff;
+    background-color: #222;
+  }
+  
+  .allauth-form-inner-content a {
+    color: #17a2b8; /* text-info */
+  }
+  
+  /* Products for image widget*/
+  
+  /* Product Form */
+  
+  .btn-file {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .custom-checkbox .custom-control-label::before {
+    border-radius: 0;
+    border-color: #dc3545;
+  }
+  
+  .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    border-radius: 0;
+  }
+  
+  .basket label[class*="id_qty_"] {
+    display: none;
+  }
+  .basket .qty_input {
+    border-radius: 0.1em !important;
+    padding: 0.2em !important;
+  }
+  .basket .credit-cards .fa-brands {
+    font-size: xx-large;
+    padding: 0.1em;
+    margin-top: 0.5em;
+    margin-right: 0.2em;
+  }
+  
+  .basket .position-fixed {
+    top: 10.5em !important;
+  }
+  
+  .show {
+    opacity: 1;
+  }
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(22px); /* Optional: vertical translation */
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in-image {
+    opacity: 0;
+    animation: fadeInLeft 0.3s ease-in-out; /* Adjust duration and timing function as needed */
+  }
+  
+  .fade-in-image.in-view {
+    opacity: 1;
+    animation: fade-in 0.3s ease-in-out; /* Same animation as before */
+  }
+  
+  /* sinup page allauth */
+  .signup .allauth-form-inner-content {
+    background-color: white;
+    padding: 0.6em;
+    border-radius: 1em;
+    box-shadow: 1px 1px 6px rgba(53, 53, 53, 0.678);
+  }
+  
+  .singup .container {
+    width: 98% !important;
+  }
+  
+  /* About page ___ ____ ____ _____ ____ ___ ____ */
+  
+  .about {
+    background-color: #c5c9cd;
+  
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .about-background-image {
+    position: relative;
+    width: 70%;
+    height: 20em;
+    place-content: center;
+    background: url("/static/About_top_image.jpg") no-repeat center center;
+    background-size: contain;
+    border-radius: 40px;
+    overflow: hidden;
+    margin: auto;
+  }
+  
+  /*  box shadow for a better effect */
+  .about-background-image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+ 
+  .about .container {
+    text-align: left !important;
+  }
+  .about ul li {
+    list-style-type: none;
+  }
+  .about .container ul li i {
+    color: #28a745;
+  }
+  .about .our_team {
+    padding-top: 1em;
+    border-radius: 1em;
+    background-color: #becbd889 !important;
+  }
+  
+  .about .our_team h3 {
+    margin-top: 1rem;
+  }
+  
+  .about .our_team p {
+    margin-top: 0.5rem;
+  }
+  .about .our_team .img-fluid {
+    border-radius: 1em;
+    aspect-ratio: 2/2;
+    width: 80%;
+  }
+  
+  .about .our_team .h2 {
+    text-decoration: underline;
+  }
+  
+  /* fee page */
+  
+  /* book appointemtn */
+  .book_appointment .container {
+    width: 60%;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.749);
+  }
+  
+  .book_appointment form input,
+  .book_appointment form select {
+    border-radius: 1em;
+    border: 1px solid rgba(0, 0, 0, 0.34);
+    background-color: #dde4eb9b;
+  }
+  .book_appointment form textarea {
+    border-radius: 1em;
+    border: 1px solid rgba(0, 0, 0, 0.34);
+    background-color: #dde4ebbd;
+  }
+  .book_appointment form button {
+    border-radius: 1em;
+    width: 60%;
+    margin: 0 auto;
+    background-color: rgb(18, 88, 113) !important;
+  }
+  .book_appointment form button:hover {
+    border-radius: 1em;
+    width: 60%;
+    margin: 0 auto;
+    background-color: rgb(160, 178, 184) !important;
+    color: black;
+  }
+  
+  .fstack {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .container-fluid:has(.partners) {
+    background-color: #e9f2f83d;
+    backdrop-filter: blur(30px);
+  }
+  
+  .companies {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+  
+  .companies.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+
+  
+  @media screen and (max-width: 650px) {
+    .btndrop {
+      position: relative;
+      display: block !important;
+      vertical-align: middle;
+    }
+  
+    .center form {
+      /* form in delete confirm page */
+      width: 90%;
+    }
+  
+    .edit_review .container {
+      width: 100%;
+    }
+  
+    /* add reviews */
+    .add_review .container {
+      width: 99%;
+    }
+  
+    .add_review form label,
+    .edit_review form label {
+      padding-right: 0.4em;
+      padding-bottom: 0.4em;
+    }
+  
+    body.add_review,
+    body.edit_review {
+      background-image: linear-gradient(135deg, #f8f8f8, #f9f9f9);
+    }
+  
+    .fstack {
+      display: inline-flex;
+  
+      flex: 1 1 auto;
+      flex-wrap: wrap;
+      align-self: center;
+      justify-content: stretch;
+    }
+    .footer .card {
+      font-size: large;
+      flex-grow: 1;
+      flex-shrink: 0;
+      flex-wrap: wrap;
+    }
+    .links,
+    .hours,
+    .contact {
+      padding-left: 1em;
+      padding-top: 0.8em;
+    }
+    .links {
+      order: 3;
+    }
+    .hours {
+      order: 2;
+    }
+    .contact {
+      order: 4;
+      margin-left: 1.3em;
+      padding-bottom: 1em;
+      margin-bottom: 1em;
+    }
+  
+    
+  
+    .grounded-radiants {
+      width: 70%; /* button width on mobile*/
+    }
+  
+    .container-fluid:has(.partners) {
+      background-color: white;
+      padding: 1em;
+      margin-top: 0em;
+    }
+  
+    .about .container {
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+      width: 100%;
+      text-align: justify !important;
+    }
+    .about .text_about > h2 {
+      position: absolute;
+      top: 22em;
+    }
+    .about nav {
+      width: 100%;
+    }
+    .about-background-image {
+      position: relative;
+      width: 100%;
+      height: 29em;
+      margin: 0 auto;
+  
+      background: url("/static/About_top_image.jpg") no-repeat center center;
+      background-size: cover;
+    }
+  
+    .about h2 {
+      font-weight: bold;
+      height: 0%;
+      color: #f1f1f2;
+      place-content: center;
+    }
+  
+    .background_text_imp {
+      font-weight: 700;
+      background-color: #ebeced8a;
+      padding-top: 1em;
+      padding-left: 1em;
+      padding-right: 1em;
+    }
+    .about .our_team {
+      padding-top: 1em;
+      border-radius: 1em;
+    }
+  
+    .desktop_logo {
+      width: 12em;
+    }
+    .mobile_logo {
+      width: 58%;
+      margin-left: 24%;
+    }
+    .navbar-toggler {
+      padding: 0em;
+    }
+  
+    /* Add your mobile-specific styles here */
+    .navbar-nav .nav-link {
+      line-height: 22px; /* Match the line-height with the navbar height */
+    }
+    .z-3 span {
+      position: relative !important;
+      background-color: blue;
+      color: white;
+      padding: 0.5rem;
+      text-decoration: none;
+      text-decoration-line: none;
+      font-size: smaller;
+    }
+  
+    .basket_icon_price {
+      width: 10%;
+    }
+  
+    /* end nav style */
+  
+    .products .product_count,
+    .products_details .product_count {
+      position: absolute !important;
+      z-index: 100;
+      top: -10px;
+      right: 3px;
+      background-color: rgba(219, 215, 215, 0.913);
+      border-radius: 50%;
+      width: 0.95em;
+      color: red !important;
+    }
+  
+    .products_details .image-container {
+      width: 100%;
+      padding-top: 1em;
+      padding-bottom: 1em;
+      background-color: #b1b1b17b;
+      display: flex;
+      justify-content: center;
+  
+      margin-top: -1em !important;
+      margin-bottom: -1em !important;
+    }
+  
+    main {
+      flex-direction: column;
+    }
+    main .p4 {
+      padding: 0.5rem !important;
+    }
+ 
+    .container {
+      flex-direction: column;
+    }
+    
+
+    .admin_booking .container{
+      width: 100% !important;
+
+    }
+  
+    .cosmetic .container,
+    .general .container,
+    .restoractive .container {
+      width: 96%;
+    }
+  
+    .cosmetic .accordion-button,
+    .general .accordion-button,
+    .restoractive .accordion-button {
+      color: rgb(13, 102, 157) !important;
+      font-weight: 900;
+      font-size: large;
+    }
+    .accordion-flush > .accordion-item {
+      border-top: 0;
+      background-color: #f8f9fa;
+    }
+    /* dentistry services -------------------------- */
+    .denteistry_services .card {
+      width: 22rem !important;
+      padding: 0.2em;
+      border-radius: 3em !important;
+      background-color: rgb(30, 88, 100);
+      color: azure;
+      padding-top: 0.6em;
+      padding-bottom: 0.6em;
+      line-height: 1.8em;
+    }
+  
+    .homepage .card .card-title {
+      font-size: 1.6em;
+    }
+  
+    /* why part---------- */
+    .why_choose_us {
+      padding: 0em !important;
+    }
+  
+    .list_why {
+      line-height: 2.4em;
+      padding-left: 0em;
+      padding-right: 0em !important;
+      font-weight: 700;
+      font-size: large;
+    }
+  
+    .why_image {
+      width: 286px;
+    }
+  
+    .position-absolute {
+      position: relative !important;
+    }
+    /* fmaily images */
+    .family_images .d-flex {
+      gap: 1em;
+    }
+  
+    .kid_img,
+    .family_img {
+      border-radius: 3em;
+      width: 300px;
+      height: 190px;
+    }
+    /* reviews ------hompage---------- */
+    .reviews {
+      flex-direction: column;
+    }
+  
+    .review_page .container {
+      width: 99%;
+    }
+    .review_page .whole_reviews {
+      justify-content: center;
+    }
+  
+    /* footer----------------------------------------- */
+    .footer {
+      height: auto;
+    }
+  
+    .footer_logo {
+      align-self: center;
+      position: relative;
+      left: auto;
+      top: auto;
+    }
+    .footer .first_card {
+      padding: 2em;
+    }
+  
+    .footer .container-md {
+      /* display:inline !important; 
+      padding-left: 1em;*/
+    }
+    .footer .links {
+      margin-left: 1.4em;
+    }
+    .footer .hours {
+      margin-left: 1.4em;
+      margin-bottom: 1em;
+    }
+  
+    footer img {
+      aspect-ratio: 1/1;
+      /* width: 3.4em; */
+      height: 2.2em;
+    }
+  
+    .products form {
+      padding: 0em;
+      border: none;
+      width: 100%;
+    }
+  
+    .products #searchbar {
+      width: 80% !important;
+    }
+  
+    .products .search_icon {
+      right: 18%;
+      bottom: 1%;
+      font-size: larger;
+      border-radius: 50%;
+    }
+  
+    .products .basket-link-search {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: large;
+      padding: 0.2em;
+      background-color: #d2d0d0;
+      border: 1px solid rgb(5, 6, 6);
+      color: black !important;
+      text-decoration: none;
+      width: 10%;
+    }
+    .products_details .input-group,
+    .products_details .input-group-prepend .btn {
+      position: unset !important;
+    }
+    .products_details .form-group .input-group .input-group-prepend .icon {
+      position: unset;
+    }
+  
+    .general2 .carousel-item {
+      left: 10%;
+    }
+    .general .fee-table {
+      width: 100%;
+    }
+  
+    .fee-table {
+      width: 100%; /* Adjust table width as needed */
+      margin: 10px auto; /* Center the table */
+      border-collapse: collapse;
+    }
+  
+    .fee-table th,
+    .fee-table td {
+      border: 2px solid #d6d6d6;
+      padding: 8px;
+      text-align: left;
+    }
+  
+    .discount-note {
+      text-align: center;
+      font-weight: 600;
+    }
+  
+    .cosmetic .carousel-item img {
+      /* image in crousel  */
+      aspect-ratio: 2/2;
+    }
+  
+    /* basket ...... */
+    .basket .container {
+      width: 100%;
+    }
+  
+    .basket .secure_checkout {
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+      width: 100%;
+    }
+  
+    /* profile */
+  
+    .profile {
+      background-image: linear-gradient(135deg, #b9d7d7aa, #d8c3c3a7);
+    }
+  
+    .profile .container {
+      width: 99%;
+    }
+    .profile form {
+      margin-bottom: 2em;
+    }
+    .profile form button {
+      width: 90%;
+    }
+    .profile .image_profile_size {
+      border: 2px solid#78868842;
+      width: 24%;
+      aspect-ratio: 1 / 1;
+    }
+  
+    .profile .profile_update_form input {
+      width: 28%;
+    }
+    .profile .profile_update_form button {
+      width: 40%;
+      margin: 0 0;
+      margin-bottom: 1em;
+    }
+  
+    .book_appointment .container,
+    .order_placement .container,
+    .logout .container,
+    .password_reset .container {
+      width: 100%;
+      box-shadow: none;
+      margin-top: 0.5em;
+    }
+  
+    body.book_appointment,
+    body.signup,
+    body.login,
+    body.order_placement,
+    body.logout,
+    body.password_reset,
+    body.verification {
+      background-image: linear-gradient(135deg, #f8f8f8, #f9f9f9);
+    }
+  
+    .signup .allauth-form-inner-content,
+    .login .allauth-form-inner-content,
+    .password_reset .allauth-form-inner-content {
+      background-color: rgba(255, 255, 255, 0.014);
+      box-shadow: none;
+      width: 100%;
+    }
+
+    .booked_app .container{
+      width: 99% !important;
+    }
+    
+    .logout .allauth-form-inner-content {
+      background-color: rgba(255, 255, 255, 0);
+      margin-top: 0em !important;
+      padding: 1em;
+      box-shadow: 1px 1px 6px rgba(255, 255, 255, 0) !important;
+      border-radius: 0;
+    }
+  
+    .verification .allauth-form-inner-content {
+      background-color: rgba(255, 255, 255, 0);
+      margin-top: 0em !important;
+      padding: 1em;
+      box-shadow: 1px 1px 6px rgba(255, 255, 255, 0) !important;
+      border-radius: 0;
+    }
+    .verification h2 {
+      padding-left: 1em;
+      text-align: left;
+    }
+  
+    .contact-page .container {
+      width: 99% !important;
+    }
+  }
+  
+  @media screen and (min-width: 760px) and (max-width: 1000px) {
+    main {
+      height: 29em;
+      background-repeat: no-repeat;
+      background-image: url("/static/office_dentist.webp");
+  
+      background-size: cover;
+      background-position: center;
+
+      
+    }
+  
+    main h1 {
+      color: #62e1ff;
+      font-weight: 900;
+    }
+  
+    .contact-page .container {
+      width: 90% !important;
+    }
+    main > .container-sm:first-of-type {
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+    }
+  
+    /* current offers  */
+    .current_offers .card {
+      width: 21rem !important;
+      height: 22rem;
+    }
+    .homepage .card .card-title {
+      font-size: 1.6em;
+    }
+  
+    /* ADD REVEIW --*/
+    .add_review .add_review_whole {
+      background-color: white;
+      padding: 0.5em;
+      border-radius: 1em;
+      box-shadow: 1px 1px 6px rgba(53, 53, 53, 0.678);
+    }
+  
+    .edit_review_whole {
+      background-color: white;
+      padding: 0.5em;
+      border-radius: 1em;
+      box-shadow: 1px 1px 6px rgba(53, 53, 53, 0.678);
+    }
+  
+    .edit_review .col-md-6:has(.edit_review_whole) {
+      width: 65%;
+    }
+  
+    .add_review .col-md-6:has(.add_review_whole) {
+      width: 65%;
+    }
+  
+    .review_page .review-intro .lead {
+      padding: 2em;
+    }
+  
+    .hstack {
+      width: 90%;
+      margin-left: 4em;
+    }
+  
+   
+    
+  
+    .profile .profile_update_form input {
+      width: 42%;
+    }
+    .profile .profile_update_form button {
+      width: 30%;
+      margin: 0 0;
+      margin-bottom: 1em;
+    }
+  
+    .about-background-image {
+      position: relative;
+      width: 70%;
+      height: 20em;
+      margin: 0 auto;
+      place-content: center;
+      background: url("/static/About_top_image.jpg") no-repeat center center;
+      background-size: contain;
+    }
+  
+    .about h2 {
+      position: absolute;
+      top: 16em;
+      left: 30%;
+      font-weight: bold;
+  
+      color: #f1f1f2;
+    }
+  
+    .navbar-expand-md .navbar-nav {
+      flex-direction: row;
+      align-items: center;
+      font-size: small;
+    }
+  
+    .why_image {
+      width: 286px;
+      max-height: 340px;
+    }
+  
+    .desktop_logo {
+      width: 10em;
+      padding-bottom: 1rem;
+      padding-left: 0rem;
+      padding-right: 0rem;
+    }
+    /* Add your mobile-specific styles here */
+  
+    .navbar-nav .nav-link {
+      line-height: 20px;
+      margin-left: 0em;
+      /* margin-right: 1.3em; */
+    }
+    .dropdown-menu[data-bs-popper] {
+      top: 100%;
+      left: 0;
+      /* margin-top: -3em; */
+    }
+  
+    .z-3 span {
+      position: relative !important;
+      background-color: blue;
+      color: white;
+      padding: 0.5rem;
+      text-decoration: none;
+      text-decoration-line: none;
+    }
+    /* end nav style */
+  
+    .services {
+      width: 46%;
+    }
+  
+    .family_images .position-absolute {
+      top: 0;
+      right: 2em;
+    }
+  
+    .footer .container-md {
+      gap: 4em;
+    }
+  
+    footer img {
+      gap: 0.5em;
+      aspect-ratio: 1 / 3;
+      width: 9em;
+      height: 3.4em;
+    }
+  
+    .products form {
+      padding: 0.5em;
+      border: none;
+    }
+    .products form .form-inline {
+      width: 60% !important;
+    }
+  
+    .products_details .image-left-larg {
+      display: flex;
+      /* background-color: rgb(227 227 227); */
+      border-right: 1px solid rgb(0 0 0 / 22%);
+      justify-content: center;
+    }
+  
+    .general .fee-table {
+      width: 70%;
+    }
+  
+    .reasons {
+      width: 60%;
+      margin: auto;
+    }
+  
+    .basket .update-form {
+      width: 50% !important;
+      place-self: center !important;
+      margin: 0 auto;
+    }
+  
+    .password_reset .col-md-6 {
+      width: 60% !important;
+    }
+  
+    .fstack {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: left;
+      margin-bottom: 1em;
+    }
+  
+    .footer .card {
+      font-weight: 500;
+      color: white;
+      background-color: rgba(0, 0, 255, 0);
+      --bs-card-border-width: 0 !important;
+      background-color: rgba(94, 94, 166, 0) !important;
+      border: 0 !important;
+    }
+    .footer .card.describtion {
+      order: 2 !important;
+    }
+  
+    .footer .card.links {
+      order: 3;
+    }
+    .footer .card.contact {
+      order: 1;
+    }
+    .footer .card.hours {
+      order: 4;
+    }
+  
+    .navbar-nav .dropdown-menu {
+      position: absolute;
+      display: block;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease-in-out;
+      transform: translateY(10px);
+    }
+  
+    .navbar-nav .dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+  
+  @media screen and (min-width: 1000px) {
+    .hstack a.btn:hover {
+      /* top nav booking  */
+      background-color: rgba(255, 255, 255, 0.482);
+      color: black !important;
+    }
+  
+    main {
+      height: 38em;
+      background-repeat: no-repeat;
+      /*background-image: url("/static/office_dentist.webp"); */
+  
+      background-size: cover;
+      background-position: center;
+    }
+    main h1 {
+      color: #78cce9;
+      font-weight: 900;
+    }
+  
+    main > .container-sm:first-of-type {
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+    }
+    .grounded-radiants {
+      width: 58%; /* landing page button width  */
+    }
+  
+
+    .admin_booking .container{
+      width: 50% !important;
+    }
+
+    /* ADD REVEIW --*/
+    .add_review .add_review_whole {
+      background-color: white;
+      padding: 0.5em;
+      border-radius: 1em;
+      box-shadow: 1px 1px 6px rgba(53, 53, 53, 0.678);
+    }
+    .add_review form textarea {
+      border-radius: 1.5em;
+    }
+  
+    .edit_review_whole {
+      background-color: white;
+      padding: 0.5em;
+      border-radius: 1em;
+      box-shadow: 1px 1px 6px rgba(53, 53, 53, 0.678);
+    }
+  
+    .navbar-nav .dropdown-menu {
+      position: absolute;
+      display: block;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease-in-out;
+      transform: translateY(10px);
+    }
+  
+    .navbar-nav .dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  
+    .hstack {
+      width: 90%;
+      margin-left: 4em;
+    }
+  
+    .navbar-nav .nav-link {
+      line-height: 1.3em;
+      margin-left: 0.3em;
+      margin-right: 1.3em;
+      /* font-weight: 800; */
+      font-size: medium !important;
+    }
+  
+    .profile .profile_update_form input {
+      width: 30%;
+    }
+    .profile .profile_update_form button {
+      width: 30%;
+      margin: 0 0em;
+    }
+  
+    .about-background-image {
+      position: relative;
+      width: 80%;
+      height: 20em;
+      margin: 0 auto;
+      place-content: center;
+      background: url("/static/About_top_image.jpg") no-repeat center center;
+      background-size: contain;
+    }
+  
+    .products_details .image-container:hover {
+      transform: scale(1.7) translateY(20%); /* effect on image details */
+    }
+  
+    .review_page .review-intro .lead {
+      padding: 2em;
+    }
+  
+    .navbar-expand-md .navbar-nav {
+      flex-direction: row;
+      align-items: center;
+    }
+  
+    main .container-sm:first-child {
+      padding: 5rem !important;
+    }
+  
+    .why_image {
+      width: 380;
+      max-height: 340px;
+    }
+  
+    .list_why {
+      line-height: 2.8em;
+      padding-left: 0.5em;
+    }
+  
+    .why_choose_us .col-md-6 {
+      /*  width: 50%; */
+      margin: 0 auto;
+    }
+  
+    .family_images .row {
+      width: 98%;
+      margin: 0 auto;
+      justify-content: center;
+    }
+    .family_images .position-absolute {
+      position: absolute !important;
+      top: 0;
+      right: 1em;
+    }
+  
+    .dropdown-menu[data-bs-popper] {
+      
+      left: 0;
+      
+    }
+  
+    .basket .update-form {
+      width: 50% !important;
+      place-self: center !important;
+      margin: 0 auto;
+    }
+  
+    .cosmetic .reasons {
+      width: 60%;
+      margin: auto;
+    }
+  
+    .products_details .image-left-larg {
+      display: flex;
+      
+      border-right: 1px solid rgb(0 0 0 / 22%);
+      justify-content: center;
+    }
+    .links .list-group-item a:hover {
+      color: red;
+      font-weight: 600;
+      text-decoration: none;
+  }
+  
+  }
+  @media screen and (min-width: 1000px) and (max-width: 1400px) {
+    .services {
+      width: 35%;
+    }
+  
+    .footer .container-md {
+      gap: 7em;
+    }
+  
+    .first_card {
+      padding-right: 0 !important;
+      padding-left: 0 !important;
+    }
+
+    .links .list-group-item a:hover {
+      color: red; 
+      font-weight: 600; 
+      text-decoration: none; /* Optional: remove underline on hover */
+  }
+  
+    
+  }
+  
+  @media screen and (min-width: 1400px) {
+    .navbar-nav .nav-link {
+      font-size: medium !important;
+    }
+    .hstack span a:hover {
+      border-bottom: 1px solid white;
+    }
+    .hstack a.btn:hover {
+      /* top nav booking  */
+      background-color: rgba(255, 255, 255, 0.482);
+      color: black !important;
+    }
+  
+    .about h2 {
+      position: static;
+      top: 52%;
+      left: 33%;
+      font-weight: bold;
+  
+      color: #f1f1f2;
+      text-shadow: 1px 1px black;
+    }
+  
+    .why_choose_us {
+      max-width: 80%;
+      margin: 0 auto;
+    }
+    .reviews {
+      max-width: 70%;
+      margin: 0 auto;
+    }
+    .current_offers .container-md {
+      max-width: 80%;
+      margin: 0 auto;
+    }
+  
+    .footer .container-md {
+      gap: 7em;
+    }
+  
+    .products #searchbar {
+      width: 50% !important;
+    }
+  
+    /* book appointment */
+    .check a.btn {
+      background-color: rgb(18, 88, 113);
+      color: white;
+      padding: 10px 20px;
+      font-size: x-large;
+    }
+    .check a.btn {
+      background-color: rgb(18, 88, 113);
+      color: white;
+      padding: 10px 20px;
+      font-size: x-large;
+    }
+   .hero_image{
+    width:70% !important;
+   }
+  }
+  
