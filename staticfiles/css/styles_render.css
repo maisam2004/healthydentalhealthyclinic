@@ -352,6 +352,15 @@ nav{
   .homepage .card .card-title {
     font-size: 2em;
   }
+
+
+  .circle_back{
+    position: absolute;
+    width:20em;
+    height: 60em;
+    border: 1px red solid;
+
+  }
   
   /* current offers  */
   

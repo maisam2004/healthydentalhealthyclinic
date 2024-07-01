@@ -352,6 +352,8 @@ nav{
   .homepage .card .card-title {
     font-size: 2em;
   }
+
+ 
   
   /* current offers  */
   
@@ -2058,6 +2060,19 @@ nav{
     }
     .grounded-radiants {
       width: 58%; /* landing page button width  */
+    }
+
+    .circle_back{
+      position: absolute;
+      width:68%;
+      top:-4em;
+      background-color: rgba(249, 73, 190, 0.544);
+      backdrop-filter: blur(30px);
+      height: 24em;
+      border-radius: 25em;
+      left:5.5em
+      
+  
     }
   
 
