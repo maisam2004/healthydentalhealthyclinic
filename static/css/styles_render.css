@@ -577,9 +577,7 @@ nav{
     opacity: 0; /* Initial low opacity */
     transition: opacity 3s ease; /* Smooth transition */
     
-    background-color: rgba(94, 136, 137, 0.48);
-    backdrop-filter: blur(60px);
-    color:white;
+    
   }
   
   .reviews .text-warning i {
@@ -2103,6 +2101,15 @@ nav{
 
     .admin_booking .container{
       width: 50% !important;
+    }
+
+    .review-card {
+      opacity: 0; /* Initial low opacity */
+      transition: opacity 3s ease; /* Smooth transition */
+      
+      background-color: rgba(94, 136, 137, 0.48);
+      backdrop-filter: blur(60px);
+      color:white;
     }
 
     /* ADD REVEIW --*/
