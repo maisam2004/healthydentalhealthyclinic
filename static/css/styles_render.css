@@ -243,7 +243,9 @@ nav{
 .homepage nav.sticky {
   background-color: rgba(2, 76, 76, 0.968); /* Example: Semi-transparent white background */
 }
-
+.homepage nav.sticky ul{
+  border-bottom: unset !important;
+}
 
 .homepage nav.sticky .desktop_logo {
   width: 10em; /* Make the logo 20% smaller when sticky */
@@ -461,6 +463,9 @@ nav{
     padding: 0.2em;
     border-radius: 3em !important;
     background-color: rgb(30, 88, 100);
+    background-color: rgba(30, 88, 100, 0.354);
+    
+    backdrop-filter: blur(30px);
     color: azure;
     padding-left: 0.1em !important;
     padding-right: 0.1em !important;
@@ -571,6 +576,10 @@ nav{
   .review-card {
     opacity: 0; /* Initial low opacity */
     transition: opacity 3s ease; /* Smooth transition */
+    
+    background-color: rgba(94, 136, 137, 0.48);
+    backdrop-filter: blur(60px);
+    color:white;
   }
   
   .reviews .text-warning i {
@@ -591,9 +600,12 @@ nav{
  
   
   .footer {
+    background: rgba(25, 80, 77, 0.753);
+  
+    backdrop-filter: blur(60px);
    
   
-    background-color: rgb(25 80 77);
+    /*background-color: rgb(25 80 77);*/
     max-width: 100%;
     /* height: 40em; */
     overflow: hidden;
@@ -2047,9 +2059,12 @@ nav{
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #1a3b16c7, rgba(22, 83, 55, 0.294)); /* Your gradient */
+  background: linear-gradient(135deg, #1a3b16c7, rgba(22, 83, 55, 0.294)); 
+  /*background: linear-gradient(120deg, #22637b95, rgba(65, 163, 117, 0.173));*/
+  background: rgba(25, 80, 77, 0.753);
   z-index: -1;
-  clip-path: polygon(0 14%, 80% 50%, 0% 90%); /* Angled triangle clip path */
+  clip-path: polygon(0 14.6%, 100% 50%, 0% 90%); /* Angled triangle clip path */
+  backdrop-filter: blur(60px);
     }
 
     .hstack a.btn:hover {
