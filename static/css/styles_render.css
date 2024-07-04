@@ -104,7 +104,7 @@
   /* Setting up a box to add the inner shadow to */
   
   body {
-    background-image: linear-gradient(135deg, #6edcd9, #7e7e81);
+    background-image: linear-gradient(135deg, #6edcd9, rgb(61 134 133));
   
     font-family: "Manrope", sans-serif;
     overflow-x: hidden;
@@ -2093,11 +2093,44 @@ nav{
     }
 
     .circle_back{
+      position: relative;
+    }
+    .circle_back .front_image_text{
+      position: absolute;
+      background-color: #d8dbd83c;
+      backdrop-filter: blur(30px);
+      width: 13em;
+      height: 3.2em;
+      left:2em;
+      bottom: 2em;
+      border-radius: 1em;
+      
+      padding-left: 0.8em;
+      padding-right: 0.4em;
+      padding-bottom: 0.4em;
+
+    }
+
+    .front_image_text p{
+      color:rgb(243, 220, 14);
+      font-weight: 600;
+      text-align: left;
+      padding-top: 0.4em;
      
       
-  
+      font-size: 14px;
+
     }
-  
+    .front_image_text p i{
+      top:-1em;
+     
+      padding: 0.3em;
+      border-radius: 2em;
+    }
+
+    .front_image_text p span{
+      font-size: x-small;
+    }
 
     .admin_booking .container{
       width: 50% !important;
