@@ -104,7 +104,7 @@
   /* Setting up a box to add the inner shadow to */
   
   body {
-    background-image: linear-gradient(135deg, #6edcd9, #7e7e81);
+    background-image: linear-gradient(135deg, #6edcd9, rgb(61 134 133));
   
     font-family: "Manrope", sans-serif;
     overflow-x: hidden;
@@ -243,7 +243,9 @@ nav{
 .homepage nav.sticky {
   background-color: rgba(2, 76, 76, 0.968); /* Example: Semi-transparent white background */
 }
-
+.homepage nav.sticky ul{
+  border-bottom: unset !important;
+}
 
 .homepage nav.sticky .desktop_logo {
   width: 10em; /* Make the logo 20% smaller when sticky */
@@ -461,6 +463,9 @@ nav{
     padding: 0.2em;
     border-radius: 3em !important;
     background-color: rgb(30, 88, 100);
+    background-color: rgba(30, 88, 100, 0.354);
+    
+    backdrop-filter: blur(30px);
     color: azure;
     padding-left: 0.1em !important;
     padding-right: 0.1em !important;
@@ -571,6 +576,8 @@ nav{
   .review-card {
     opacity: 0; /* Initial low opacity */
     transition: opacity 3s ease; /* Smooth transition */
+    
+    
   }
   
   .reviews .text-warning i {
@@ -591,9 +598,12 @@ nav{
  
   
   .footer {
+    background: rgba(25, 80, 77, 0.753);
+  
+    backdrop-filter: blur(60px);
    
   
-    background-color: rgb(25 80 77);
+    /*background-color: rgb(25 80 77);*/
     max-width: 100%;
     /* height: 40em; */
     overflow: hidden;
@@ -2047,9 +2057,12 @@ nav{
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #1a3b16c7, rgba(22, 83, 55, 0.294)); /* Your gradient */
+  background: linear-gradient(135deg, #1a3b16c7, rgba(22, 83, 55, 0.294)); 
+  /*background: linear-gradient(120deg, #22637b95, rgba(65, 163, 117, 0.173));*/
+  background: rgba(25, 80, 77, 0.753);
   z-index: -1;
-  clip-path: polygon(0 14%, 80% 50%, 0% 90%); /* Angled triangle clip path */
+  clip-path: polygon(0 14.6%, 100% 50%, 0% 90%); /* Angled triangle clip path */
+  backdrop-filter: blur(60px);
     }
 
     .hstack a.btn:hover {
@@ -2080,14 +2093,56 @@ nav{
     }
 
     .circle_back{
+      position: relative;
+    }
+    .circle_back .front_image_text{
+      position: absolute;
+      background-color: #d8dbd83c;
+      backdrop-filter: blur(30px);
+      width: 13em;
+      height: 3.2em;
+      left:2em;
+      bottom: 2em;
+      border-radius: 1em;
+      
+      padding-left: 0.8em;
+      padding-right: 0.4em;
+      padding-bottom: 0.4em;
+
+    }
+
+    .front_image_text p{
+      color:rgb(243, 220, 14);
+      font-weight: 600;
+      text-align: left;
+      padding-top: 0.4em;
      
       
-  
+      font-size: 14px;
+
     }
-  
+    .front_image_text p i{
+      top:-1em;
+     
+      padding: 0.3em;
+      border-radius: 2em;
+    }
+
+    .front_image_text p span{
+      font-size: x-small;
+    }
 
     .admin_booking .container{
       width: 50% !important;
+    }
+
+    .review-card {
+      opacity: 0; /* Initial low opacity */
+      transition: opacity 3s ease; /* Smooth transition */
+      
+      background-color: rgba(94, 136, 137, 0.48);
+      backdrop-filter: blur(60px);
+      color:white;
     }
 
     /* ADD REVEIW --*/
