@@ -283,10 +283,24 @@ nav{
   }
   
   .homepage a.btn {
-    background-color: rgb(18, 88, 113);
+    
     color: white;
     /* padding: 10px 20px; */
     font-weight: 700;
+
+    /*border-image-source: linear-gradient(#19504d, rgba(30, 114, 100, 0.482)); */
+  
+    border-image-slice: fill 1 ;
+    background-color: transparent;
+  }
+  .homepage .btn-dark{
+    background-color: rgb(28, 28, 28) !important;
+    
+  }
+  .homepage .btn-dark:hover{
+    background-color: rgb(133, 133, 133) !important;
+    color:#000 !important;
+    
   }
   .cosmetic a.btn,
   .general a.btn,
@@ -1524,6 +1538,18 @@ nav{
     main .p4 {
       padding: 0.5rem !important;
     }
+
+    .homepage a.btn.grounded-radiants{
+    
+      color: white;
+      /* padding: 10px 20px; */
+      font-weight: 700;
+  
+      /*border-image-source: linear-gradient(#19504d, rgba(30, 114, 100, 0.482)); */
+    
+      border-image-slice: fill 1 ;
+      background-color: rgb(14, 14, 166) !important;
+    }
  
     .container {
       flex-direction: column;
@@ -2108,7 +2134,7 @@ nav{
       padding-left: 0.8em;
       padding-right: 0.4em;
       padding-bottom: 0.4em;
-
+      left:5em;
     }
 
     .front_image_text p{
@@ -2119,7 +2145,7 @@ nav{
      
       
       font-size: 14px;
-
+      
     }
     .front_image_text p i{
       top:-1em;
