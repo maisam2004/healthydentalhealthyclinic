@@ -97,6 +97,7 @@ Healthy Dental Clinic is a web application designed for a dental practice. It al
 While fully functional, this site primarily serves as an educational project to demonstrate web development skills.
 
 Link to the deployed site can be found [Here](https://healtydentalclinic-8f35f633fd68.herokuapp.com/)
+Link to the deployed site on Render  can be found [Here](https://dental-clinic-render.onrender.com/)
 
 ## Showcase
 
