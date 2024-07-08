@@ -1553,6 +1553,7 @@ z-index: 10;
     }
     .navbar-toggler {
       padding: 0em;
+      background-color: #2dddc6d4;
     }
   
     /* Add your mobile-specific styles here */
@@ -1567,6 +1568,13 @@ z-index: 10;
     .navbar-nav .nav-link {
       line-height: 22px; /* Match the line-height with the navbar height */
     }
+
+
+    .nav-item:has(> .nav-link.active), .list-group-item:has(> .list-group-item.active) {
+      border-bottom: 2px dotted rgb(240, 114, 11);
+      width: 50%;
+      background-color: #007bff3c;
+  }
     .z-3 span {
       position: relative !important;
       background-color: blue;
