@@ -291,7 +291,7 @@ nav{
     /*border-image-source: linear-gradient(#19504d, rgba(30, 114, 100, 0.482)); */
   
     border-image-slice: fill 1 ;
-    background-color: transparent;
+    
   }
   .homepage .btn-dark{
     background-color: rgb(28, 28, 28) !important;
