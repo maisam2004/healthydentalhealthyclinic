@@ -2156,6 +2156,29 @@ z-index: 10;
       visibility: visible;
       transform: translateY(0);
     }
+
+    .front_image_text p i {
+      top: -1em;
+      padding: 0.3em;
+      border-radius: 2em;
+  }
+
+
+    .circle_back .front_image_text {
+      position: absolute;
+      background-color: #d8dbd83c;
+      backdrop-filter: blur(30px);
+      width: 13em;
+      height: 3.2em;
+      bottom: 0;
+      left: 1em;
+      color:yellow;
+      border-radius: 1em;
+      padding-left: 0.8em;
+      padding-right: 0.4em;
+      padding-bottom: 0.4em;
+      left: 5em;
+  }
   }
   
   @media screen and (min-width: 1000px) {
