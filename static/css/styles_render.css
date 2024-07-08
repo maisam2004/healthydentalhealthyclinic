@@ -1556,6 +1556,14 @@ z-index: 10;
     }
   
     /* Add your mobile-specific styles here */
+
+    .navbar-nav .nav-link {
+      line-height: 1.3em; /* Match the line-height with the navbar height */
+      margin-left: 0.3em;
+      font-weight: 600;
+      font-size: medium;
+    }
+
     .navbar-nav .nav-link {
       line-height: 22px; /* Match the line-height with the navbar height */
     }
