@@ -105,7 +105,8 @@
   
   body {
     background-image: linear-gradient(135deg, #6edcd9, rgb(61 134 133));
-  
+    
+    background-repeat: no-repeat;
     font-family: "Manrope", sans-serif;
     overflow-x: hidden;
   
@@ -215,7 +216,7 @@ color:white !important;
 .homepage .nav_main{
   /*border-image-source: linear-gradient(#19504d, rgba(8, 30, 20, 0.482));*/
   
-  border-image-source: linear-gradient(#19504d, rgba(30, 114, 100, 0.482));
+  border-image-source: linear-gradient(#19504d, rgba(30, 114, 100, 0.262));
   
       border-image-slice: fill 1 ;
       background-color: transparent !important;
@@ -2224,9 +2225,10 @@ z-index: 10;
       -webkit-backdrop-filter: blur(2px);
     }
 
-    .homepage a.btn {
-      padding: 1em !important;
-    }
+    .homepage a.btn:nth-of-type(n+2) {
+      padding: 0.8em !important;
+  }
+  
     .grounded-radiants {
       width: 58%; /* landing page button width  */
     }
