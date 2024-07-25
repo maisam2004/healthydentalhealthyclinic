@@ -226,7 +226,7 @@
         </div>
         {% elif  request.resolver_match.url_name == 'product_detail'   %}
 
-        <div class="container-fluid py-2 border-bottom d-md-none" style="background-color: #f8f9fa;">
+        <div class="container-fluid py-2 border-bottom d-md-none mb-3" style="background-color: #b2b2b2;">
             <div class="d-flex justify-content-between  ">
                 <div class="delivery_fast align-self-center fw-semibold">Fast delivery <img src="{% static 'fast_del.png'%}"></div> 
                 <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_basket' %}">
