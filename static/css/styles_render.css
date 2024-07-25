@@ -1636,13 +1636,13 @@ z-index: 10;
   
     .products_details .image-container {
       width: 100%;
-      padding-top: 1em;
+      padding-top: 1.2em;
       padding-bottom: 1em;
       background-color: #b1b1b17b;
       display: flex;
       justify-content: center;
   
-      margin-top: -1em !important;
+      margin-top: -.1em !important;
       margin-bottom: -1em !important;
     }
   

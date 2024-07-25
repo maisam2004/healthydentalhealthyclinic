@@ -120,17 +120,17 @@
                     <hr>
                 </div>
                 {% if forloop.counter|divisibleby:2 %}
-                    <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-4">
+                    <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-4 mt-4">
                         <hr>
                     </div>
                     {% endif %}
                 {% if forloop.counter|divisibleby:3 %}
-                    <div class="col-12 d-none  d-lg-block d-xl-none mb-4">
+                    <div class="col-12 d-none  d-lg-block d-xl-none mb-4 mt-4">
                         <hr>
                     </div>
                     {% endif %}
                 {% if forloop.counter|divisibleby:4 %}
-                    <div class="col-12 d-none d-xl-block mb-4">
+                    <div class="col-12 d-none d-xl-block mb-4 mt-4">
                         <hr>
                     </div>
                 {% endif %}
@@ -149,6 +149,39 @@
 {% endblock %}
 {% block 'extrajs' %}
 {{ block.super }}
-
-
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const productCards = document.querySelectorAll(".products_cards");
+  
+      productCards.forEach(card => {
+        card.addEventListener("mouseenter", function() {
+          gsap.to(this, {
+            duration: 0.3,
+            scale: 1.1,
+            boxShadow: "0px 2px 5px rgba(0, 0, 0, 0.2)"
+          });
+  
+          const button = card.querySelector(".btn-outline-success");
+          gsap.to(button, {
+            duration: 0.3,
+            width: "200px" // Adjust the target width as needed
+          });
+        });
+  
+        card.addEventListener("mouseleave", function() {
+          gsap.to(this, {
+            duration: 0.3,
+            scale: 1,
+            boxShadow: "none"
+          });
+  
+          const button = card.querySelector(".btn-outline-success");
+          gsap.to(button, {
+            duration: 0.3,
+            width: "150px" // Reset the button width
+          });
+        });
+      });
+    });
+  </script>
     {% endblock %}

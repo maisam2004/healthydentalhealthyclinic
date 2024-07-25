@@ -77,12 +77,12 @@
                 <span class="text-info fw-bold fs-5 text-price">ONLY FOR  $69</span>
                 </p>
                 
-              <a href="{% url 'book_appointment' %}" class="join_now border rounded p-2 px-3 text-center rounded-pill btn w-50">Join Now</a>
+              <a href="{% url 'book_appointment' %}" class="join_now border rounded p-2 px-3 text-center rounded-pill btn ">Join Now</a>
               
             </div>
           </div>
 
-          <div class="card right-card  position-relative " style="width: 24rem;">
+          <div class="card right-card  position-relative offer-card" style="width: 24rem;">
             
             <div class="card-body m-3">
                 <h5 class="card-title  rounded p-2  rounded-pill">Special Offer</h5><br>
@@ -95,7 +95,7 @@
                   <span class="text-info fw-bold fs-5 text-price " >Now only $199</span>
               </p>
               
-                <a href="{% url 'book_appointment' %}" class="join_now border rounded p-2 px-3 text-center rounded-pill btn w-50">Book Now</a>
+                <a href="{% url 'book_appointment' %}" class="join_now border rounded p-2 px-3 text-center rounded-pill btn ">Book Now</a>
             </div>
         </div>
 
@@ -230,9 +230,49 @@
 
 {% endblock %}
 
+{% block 'extrajs' %}
+{{ block.super }}
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const offerCards = document.querySelectorAll(".offer-card"); // Target by common class
+  
+      offerCards.forEach(card => {
+        card.addEventListener("mouseenter", function() {
+          gsap.to(this, { // Animate the entire card
+            duration: 0.3,
+            scale: 1.1,
+            boxShadow: "0px 2px 5px rgba(0, 0, 0, 0.2)"
+          });
+  
+          const button = card.querySelector(".join_now"); // Target the specific button
+          console.log('heelo'); 
+          console.log(button); // Check if the button is found
+          gsap.to(button, { // Animate the button width
+            duration: 0.3,
+            width: "300px" // Adjust the target width as needed
+          });
+        });
+  
+        card.addEventListener("mouseleave", function() {
+          gsap.to(this, {
+            duration: 0.3,
+            scale: 1,
+            boxShadow: "none"
+          });
+  
+          const button = card.querySelector(".join_now");
+          console.log(button); 
+          console.log(button); // Check if the button is found
+          gsap.to(button, {
+            duration: 0.3,
+            width: "120px" // Reset the button width
+          });
+        });
+      });
+    });
+  </script>
 
-
-
+{% endblock %}
 
 
 
