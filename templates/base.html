@@ -401,7 +401,7 @@
                   image.classList.remove('in-view');
                 }
               });
-            }
+            } 
           
             window.addEventListener('scroll', checkImageVisibility);
             checkImageVisibility(); // Check initially when the page loads
@@ -473,7 +473,7 @@
 
 
 
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function() {//add sticky class to navbar
             const navbar = document.getElementById('navbar');
             const threshold = 100; // Number of pixels to scroll before changing background
           

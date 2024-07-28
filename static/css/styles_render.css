@@ -110,7 +110,7 @@
     font-family: "Manrope", sans-serif;
     overflow-x: hidden;
   
-    ms-high-contrast-adjust: none;
+   
   }
   
   section h1 {
@@ -488,10 +488,10 @@ z-index: 10;
   
   @keyframes slideFromLeft {
     0% {
-      transform: translateX(-100%);
+      transform: translateX(-20%);
     }
     50% {
-      transform: translateX(50%);
+      transform: translateX(-50%);
     }
     100% {
       transform: translateX(0);
@@ -500,10 +500,10 @@ z-index: 10;
   
   @keyframes slideFromRight {
     0% {
-      transform: translateX(100%);
+      transform: translateX(20%);
     }
     50% {
-      transform: translateX(50%);
+      transform: translateX(30%);
     }
     100% {
       transform: translateX(0);
